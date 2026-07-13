@@ -28,7 +28,7 @@ const pageTitle = title.includes('AOGIM Design System')
 ---
 
 <!doctype html>
-<html lang={locale} class="dark" data-theme="aogim">
+<html lang={locale} data-theme="aogim">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -39,6 +39,19 @@ const pageTitle = title.includes('AOGIM Design System')
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
+    <script is:inline>
+      (function() {
+        var theme;
+        try {
+          theme = localStorage.getItem('theme');
+        } catch (e) {}
+        if (!theme) {
+          theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.classList.add(theme);
+        localStorage.setItem('theme', theme);
+      })();
+    </script>
     <ViewTransitions />
     <title>{pageTitle}</title>
     <SEO title={title} description={description} image={image} canonical={canonical} />
