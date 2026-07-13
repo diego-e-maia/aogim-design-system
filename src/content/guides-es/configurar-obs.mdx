@@ -1,0 +1,72 @@
+---
+title: Configurar OBS Studio
+description: Cómo usar los overlays AOGIM en OBS Studio para transmisión en vivo.
+order: 5
+---
+
+import Callout from '../../components/ui/Callout.astro';
+
+Esta guía explica cómo configurar los overlays del design system en OBS Studio.
+
+## Paso 1: Descargar Overlays
+
+Ve a la página de **Descargas** y descarga los archivos:
+
+- `overlay-principal.html` — barra inferior con logo e información
+- `overlay-musica.html` — letras de música con barra degradada
+
+## Paso 2: Agregar en OBS
+
+1. Abre OBS Studio
+2. En la escena deseada, haz clic en **+** → **Browser**
+3. Configura:
+
+| Propiedad | Valor |
+|-----------|-------|
+| URL | Archivo HTML (haz clic en "Browse") |
+| Ancho | 1920 |
+| Alto | 1080 |
+| FPS | 30 |
+| Interactuar | ✔ (si necesitas clic) |
+
+## Paso 3: Posicionar
+
+Los overlays son transparentes (excepto los elementos visuales), así que puedes:
+
+1. Colocar el overlay como **primera fuente** (encima del video de la cámara)
+2. O como **última fuente** (encima del fondo)
+
+## Personalización
+
+Edita el archivo HTML para cambiar:
+
+- **Texto:** reemplaza "AOGIM" y "Igreja AOGIM"
+- **Colores:** cambia los degradados y colores en `<style>`
+- **Altura de barra:** modifica el valor `height: 80px`
+
+### Overlay Principal
+
+El overlay principal tiene:
+
+- Barra inferior semi-transparente con blur
+- Logo AOGIM a la izquierda
+- Información a la derecha
+- Decoración vertical en el lado izquierdo
+
+### Overlay de Música
+
+El overlay de música tiene:
+
+- Área central para letras con sombra
+- Barra degradada en la parte inferior
+- Texto "AOGIM — Adoración"
+
+## Consejos para Transmisión
+
+- Usa resolución **1920x1080** en la escena
+- El overlay HTML consume menos CPU que las imágenes
+- Para animaciones, agrega CSS keyframes en el archivo HTML
+
+<Callout variant="warning">
+  Siempre prueba la transmisión antes del culto en vivo. Verifica que los overlays no cubran elementos importantes de la escena.
+</Callout>

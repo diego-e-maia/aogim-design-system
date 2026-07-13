@@ -1,0 +1,55 @@
+---
+title: Configurar Holyrics
+description: Cómo usar las plantillas AOGIM en Holyrics para proyección en cultos.
+order: 4
+---
+
+import Card from '../../components/ui/Card.astro';
+import Callout from '../../components/ui/Callout.astro';
+
+Esta guía explica cómo configurar las plantillas del design system en Holyrics.
+
+## Paso 1: Descargar Plantillas
+
+Ve a la página de **Descargas** y descarga los archivos:
+
+- `template-letra.html` — para letras de música
+- `template-avisos.html` — para avisos e informativos
+
+## Paso 2: Agregar en Holyrics
+
+1. Abre Holyrics
+2. Ve a **Configuración → Presentación → Modelos**
+3. Haz clic en **Agregar** y selecciona el archivo HTML descargado
+4. Ajusta la resolución a **1920x1080**
+
+## Paso 3: Personalizar
+
+Las plantillas usan HTML puro con CSS inline. Puedes editar:
+
+- **Colores:** cambia los valores `background` y `color` en `<style>`
+- **Textos:** reemplaza el contenido dentro de las etiquetas `<p>` y `<h1>`
+- **Fuente:** la familia Inter se carga desde Google Fonts
+
+## Estructura de la Plantilla
+
+```html
+<body>
+  <div class="verse">
+    <p>Texto de la música o aviso</p>
+    <p class="highlight">Referencia</p>
+  </div>
+</body>
+```
+
+La clase `.verse` centra el contenido vertical y horizontalmente.
+
+## Consejos
+
+- Siempre prueba la plantilla antes del culto
+- Mantén una copia de respaldo de los archivos originales
+- Usa la plantilla de letras para música y la de avisos para informativos
+
+<Callout>
+  Para resoluciones diferentes a 1920x1080, ajusta el `width` y `height` en el CSS de la plantilla.
+</Callout>

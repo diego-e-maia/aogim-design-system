@@ -30,14 +30,35 @@ for (const slug of componentes) {
   pages.push({ path: `/componentes/${slug}`, priority: '0.8', changefreq: 'monthly' });
 }
 
-const brandEntries = await getCollection('brand');
-for (const entry of brandEntries) {
-  pages.push({ path: `/fundamentos/${entry.slug}`, priority: '0.8', changefreq: 'monthly' });
+const localePaths = [
+  '/fundamentos', '/guias', '/componentes', '/recursos',
+  '/recursos/downloads', '/recursos/biblioteca', '/recursos/holyrics', '/recursos/obs',
+  '/templates', '/templates/paginas', '/templates/posts', '/templates/eventos',
+];
+
+for (const p of localePaths) {
+  pages.push({ path: `/en${p}`, priority: '0.8', changefreq: 'weekly' });
+  pages.push({ path: `/es${p}`, priority: '0.8', changefreq: 'weekly' });
+}
+pages.push({ path: '/en', priority: '1.0', changefreq: 'weekly' });
+pages.push({ path: '/es', priority: '1.0', changefreq: 'weekly' });
+
+const brandCollections = ['brand', 'brand-en', 'brand-es'];
+for (const collection of brandCollections) {
+  const entries = await getCollection(collection);
+  const prefix = collection === 'brand' ? '' : `/${collection.replace('brand-', '')}`;
+  for (const entry of entries) {
+    pages.push({ path: `${prefix}/fundamentos/${entry.slug}`, priority: '0.8', changefreq: 'monthly' });
+  }
 }
 
-const guideEntries = await getCollection('guides');
-for (const entry of guideEntries) {
-  pages.push({ path: `/guias/${entry.slug}`, priority: '0.8', changefreq: 'monthly' });
+const guideCollections = ['guides', 'guides-en', 'guides-es'];
+for (const collection of guideCollections) {
+  const entries = await getCollection(collection);
+  const prefix = collection === 'guides' ? '' : `/${collection.replace('guides-', '')}`;
+  for (const entry of entries) {
+    pages.push({ path: `${prefix}/guias/${entry.slug}`, priority: '0.8', changefreq: 'monthly' });
+  }
 }
 
 const siteUrl = 'https://design.aogim.org';

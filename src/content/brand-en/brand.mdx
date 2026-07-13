@@ -1,0 +1,64 @@
+---
+title: Brand
+description: Visual identity, logotype, signature, and brand usage guidelines for AOGIM.
+order: 1
+icon: mark
+---
+
+import Card from '../../components/ui/Card.astro';
+import Callout from '../../components/ui/Callout.astro';
+
+## Logotype
+
+The AOGIM logo is composed of the flame symbol and uppercase lettering. It represents the Holy Spirit in the form of fire over the church.
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+  <Card class="p-8 flex items-center justify-center">
+    <div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-brand-500 to-sacred-500 flex items-center justify-center">
+      <span class="text-white font-bold text-4xl">A</span>
+    </div>
+  </Card>
+  <Card class="p-6">
+    <h4 class="font-semibold mb-2">Symbol</h4>
+    <p class="text-sm text-[rgb(var(--color-text-secondary))]">The flame represents the Holy Spirit and God's fire over the church.</p>
+  </Card>
+</div>
+
+## Clear Space
+
+Maintain a minimum spacing equivalent to the height of the letter "A" around the logo in all applications.
+
+<Card class="p-8">
+  <div class="border-2 border-dashed border-brand-500 rounded-xl p-8">
+    <div class="bg-dark-100 dark:bg-dark-800 rounded-lg p-6 text-center">
+      <span class="text-3xl font-bold">AOGIM</span>
+    </div>
+  </div>
+</Card>
+
+## Incorrect Usage
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-6">
+  <Card class="p-6">
+    <div class="bg-red-500/10 rounded-lg p-4 text-center mb-3">
+      <span class="text-lg font-bold" style="filter: blur(1px)">AOGIM</span>
+    </div>
+    <p class="text-sm text-red-500 font-medium">Do not distort</p>
+  </Card>
+  <Card class="p-6">
+    <div class="bg-red-500/10 rounded-lg p-4 text-center mb-3">
+      <span class="text-lg font-bold" style="transform: rotate(-5deg); display: inline-block;">AOGIM</span>
+    </div>
+    <p class="text-sm text-red-500 font-medium">Do not rotate</p>
+  </Card>
+  <Card class="p-6">
+    <div class="bg-red-500/10 rounded-lg p-4 text-center mb-3" style="background: linear-gradient(135deg, #d68020, #8b55ff)">
+      <span class="text-lg font-bold text-white">AOGIM</span>
+    </div>
+    <p class="text-sm text-red-500 font-medium">Do not apply gradients</p>
+  </Card>
+</div>
+
+<Callout variant="warning">
+  Always use the original logo provided in the download files. Never recreate the logo manually.
+</Callout>

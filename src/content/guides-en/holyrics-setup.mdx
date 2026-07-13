@@ -1,0 +1,55 @@
+---
+title: Holyrics Setup
+description: How to use AOGIM templates in Holyrics for worship projection.
+order: 4
+---
+
+import Card from '../../components/ui/Card.astro';
+import Callout from '../../components/ui/Callout.astro';
+
+This guide explains how to set up design system templates in Holyrics.
+
+## Step 1: Download Templates
+
+Go to the **Downloads** page and download the files:
+
+- `template-letra.html` — for song lyrics
+- `template-avisos.html` — for announcements
+
+## Step 2: Add to Holyrics
+
+1. Open Holyrics
+2. Go to **Settings → Presentation → Templates**
+3. Click **Add** and select the downloaded HTML file
+4. Set resolution to **1920x1080**
+
+## Step 3: Customize
+
+Templates use plain HTML with inline CSS. You can edit:
+
+- **Colors:** change `background` and `color` values in `<style>`
+- **Text:** replace content inside `<p>` and `<h1>` tags
+- **Font:** the Inter font is loaded from Google Fonts
+
+## Template Structure
+
+```html
+<body>
+  <div class="verse">
+    <p>Song text or announcement</p>
+    <p class="highlight">Reference</p>
+  </div>
+</body>
+```
+
+The `.verse` class centers content vertically and horizontally.
+
+## Tips
+
+- Always test the template before the service
+- Keep a backup copy of the original files
+- Use the lyrics template for songs and the announcements template for notices
+
+<Callout>
+  For resolutions other than 1920x1080, adjust the `width` and `height` in the template CSS.
+</Callout>

@@ -26,10 +26,23 @@ const languages = [
       aria-label={`Switch to ${lang.label}`}
       onclick="
         event.preventDefault();
-        localStorage.setItem('locale', this.dataset.lang);
-        window.dispatchEvent(new CustomEvent('locale-change', { detail: this.dataset.lang }));
-        document.querySelectorAll('[data-lang]').forEach(el => el.classList.remove('bg-brand-500/10', 'text-brand-500'));
+        var targetLang = this.dataset.lang;
+        localStorage.setItem('locale', targetLang);
+        document.querySelectorAll('[data-lang]').forEach(function(el) {
+          el.classList.remove('bg-brand-500/10', 'text-brand-500');
+        });
         this.classList.add('bg-brand-500/10', 'text-brand-500');
+        var path = window.location.pathname;
+        var prefix = '';
+        if (path.startsWith('/en/') || path.startsWith('/es/')) {
+          prefix = path.split('/')[1];
+          path = '/' + path.split('/').slice(2).join('/');
+        }
+        if (targetLang === 'pt') {
+          window.location.href = path || '/';
+        } else {
+          window.location.href = '/' + targetLang + (path || '/');
+        }
       "
     >
       {lang.label}

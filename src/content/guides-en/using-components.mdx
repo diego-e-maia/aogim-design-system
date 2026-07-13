@@ -1,0 +1,71 @@
+---
+title: Using Components
+description: Practical guide on how to use the system components.
+order: 2
+---
+
+import Callout from '../../components/ui/Callout.astro';
+import Tabs from '../../components/ui/Tabs.astro';
+
+This guide shows how to use the components in your projects.
+
+## Installation
+
+If you are using the portal as a reference, there is nothing to install — components are already here.
+
+To use in external projects, copy the desired component from `src/components/ui/` and adjust dependencies.
+
+## Component Structure
+
+Each component follows this pattern:
+
+```
+Componente.astro
+├── Frontmatter (---)
+│   ├── Imports
+│   └── Props with interface
+├── HTML Template
+│   ├── Semantic structure
+│   └── Slots for content
+├── Script (client-side JS)
+└── Style (CSS scoped)
+```
+
+## Usage Examples
+
+### Button
+
+The Button component accepts `variant`, `size`, and `href`:
+
+<Tabs
+  tabs={[
+    { label: 'Visual', content: 'Three buttons side by side: Primary (orange), Secondary (gray), Ghost (transparent).' },
+    { label: 'Code', content: '<Button variant="primary">Primary</Button>\n<Button variant="secondary">Secondary</Button>\n<Button variant="ghost">Ghost</Button>' },
+  ]}
+/>
+
+### Modal
+
+The Modal needs a unique `id` and a `trigger` slot:
+
+<Tabs
+  tabs={[
+    { label: 'Visual', content: 'An "Open" button that opens a modal with title, content, and action buttons.' },
+    { label: 'Code', content: '<Modal id="exemplo" title="Title">\n  <p slot="trigger">Open</p>\n  <p>Content</p>\n</Modal>' },
+  ]}
+/>
+
+### Accordion
+
+For FAQ lists or collapsible content:
+
+<Tabs
+  tabs={[
+    { label: 'Visual', content: 'Three collapsible items: only one opens at a time in single mode.' },
+    { label: 'Code', content: '<Accordion\n  items={[\n    { title: "Question", content: "Answer" },\n  ]}\n/>' },
+  ]}
+/>
+
+<Callout variant="info">
+  Refer to each component page for full documentation of properties and variants.
+</Callout>

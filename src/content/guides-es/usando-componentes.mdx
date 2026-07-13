@@ -1,0 +1,71 @@
+---
+title: Usando Componentes
+description: Guía práctica de cómo utilizar los componentes del sistema.
+order: 2
+---
+
+import Callout from '../../components/ui/Callout.astro';
+import Tabs from '../../components/ui/Tabs.astro';
+
+Esta guía muestra cómo utilizar los componentes en tus proyectos.
+
+## Instalación
+
+Si estás usando el portal como referencia, no necesitas instalar nada — los componentes ya están aquí.
+
+Para usar en proyectos externos, copia el componente deseado de la carpeta `src/components/ui/` y ajusta las dependencias.
+
+## Estructura de un Componente
+
+Cada componente sigue este patrón:
+
+```
+Componente.astro
+├── Frontmatter (---)
+│   ├── Imports
+│   └── Props con interfaz
+├── Template HTML
+│   ├── Estructura semántica
+│   └── Slots para contenido
+├── Script (JS del lado del cliente)
+└── Style (CSS scoped)
+```
+
+## Ejemplos de Uso
+
+### Button
+
+El componente Button acepta `variant`, `size` y `href`:
+
+<Tabs
+  tabs={[
+    { label: 'Visual', content: 'Tres botones lado a lado: Primary (naranja), Secondary (gris), Ghost (transparente).' },
+    { label: 'Código', content: '<Button variant="primary">Primary</Button>\n<Button variant="secondary">Secondary</Button>\n<Button variant="ghost">Ghost</Button>' },
+  ]}
+/>
+
+### Modal
+
+El Modal necesita un `id` único y un slot `trigger`:
+
+<Tabs
+  tabs={[
+    { label: 'Visual', content: 'Un botón "Abrir" que abre un modal con título, contenido y botones de acción.' },
+    { label: 'Código', content: '<Modal id="ejemplo" title="Título">\n  <p slot="trigger">Abrir</p>\n  <p>Contenido</p>\n</Modal>' },
+  ]}
+/>
+
+### Accordion
+
+Para listas de FAQ o contenido colapsable:
+
+<Tabs
+  tabs={[
+    { label: 'Visual', content: 'Tres elementos colapsables: solo uno se abre a la vez en modo single.' },
+    { label: 'Código', content: '<Accordion\n  items={[\n    { title: "Pregunta", content: "Respuesta" },\n  ]}\n/>' },
+  ]}
+/>
+
+<Callout variant="info">
+  Consulta la página de cada componente para documentación completa de propiedades y variantes.
+</Callout>

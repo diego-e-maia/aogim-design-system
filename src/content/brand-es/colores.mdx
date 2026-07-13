@@ -1,0 +1,78 @@
+---
+title: Colores
+description: Paleta cromática completa con colores primarios, secundarios y semánticos.
+order: 2
+icon: palette
+---
+
+import Card from '../../components/ui/Card.astro';
+import Callout from '../../components/ui/Callout.astro';
+
+Nuestra paleta de colores refleja la identidad de la iglesia: calidez, acogida y espiritualidad.
+
+## Colores Primarios
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+  <Card class="p-6">
+    <div class="h-24 rounded-xl mb-4" style="background: #d68020"></div>
+    <h4 class="font-semibold">Brand Primary</h4>
+    <p class="text-sm text-[rgb(var(--color-text-secondary))] font-mono">#d68020</p>
+    <p class="text-sm text-[rgb(var(--color-text-secondary))]">Naranja dorado — color principal de la marca</p>
+  </Card>
+  <Card class="p-6">
+    <div class="h-24 rounded-xl mb-4" style="background: #8b55ff"></div>
+    <h4 class="font-semibold">Brand Secondary</h4>
+    <p class="text-sm text-[rgb(var(--color-text-secondary))] font-mono">#8b55ff</p>
+    <p class="text-sm text-[rgb(var(--color-text-secondary))]">Púrpura espiritual — color secundario</p>
+  </Card>
+</div>
+
+## Colores Neutros
+
+<div class="grid grid-cols-2 sm:grid-cols-5 gap-4 my-8">
+  <div><div class="h-16 rounded-lg mb-2" style="background: #f6f6f7"></div><p class="text-xs font-mono">50</p></div>
+  <div><div class="h-16 rounded-lg mb-2" style="background: #e2e2e5"></div><p class="text-xs font-mono">100</p></div>
+  <div><div class="h-16 rounded-lg mb-2" style="background: #c4c5cb"></div><p class="text-xs font-mono">200</p></div>
+  <div><div class="h-16 rounded-lg mb-2" style="background: #9fa0a9"></div><p class="text-xs font-mono">300</p></div>
+  <div><div class="h-16 rounded-lg mb-2" style="background: #7b7c87"></div><p class="text-xs font-mono">400</p></div>
+  <div><div class="h-16 rounded-lg mb-2" style="background: #61626e"></div><p class="text-xs font-mono">500</p></div>
+  <div><div class="h-16 rounded-lg mb-2" style="background: #4d4d57"></div><p class="text-xs font-mono">600</p></div>
+  <div><div class="h-16 rounded-lg mb-2" style="background: #3f3f47"></div><p class="text-xs font-mono">700</p></div>
+  <div><div class="h-16 rounded-lg mb-2" style="background: #27272f"></div><p class="text-xs font-mono">800</p></div>
+  <div><div class="h-16 rounded-lg mb-2" style="background: #1a1a21"></div><p class="text-xs font-mono">900</p></div>
+</div>
+
+## Colores Semánticos
+
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4 my-8">
+  <Card class="p-4">
+    <div class="h-12 rounded-lg mb-2" style="background: #22c55e"></div>
+    <p class="text-sm font-medium">Success</p>
+    <p class="text-xs text-[rgb(var(--color-text-secondary))] font-mono">#22c55e</p>
+  </Card>
+  <Card class="p-4">
+    <div class="h-12 rounded-lg mb-2" style="background: #f59e0b"></div>
+    <p class="text-sm font-medium">Warning</p>
+    <p class="text-xs text-[rgb(var(--color-text-secondary))] font-mono">#f59e0b</p>
+  </Card>
+  <Card class="p-4">
+    <div class="h-12 rounded-lg mb-2" style="background: #ef4444"></div>
+    <p class="text-sm font-medium">Error</p>
+    <p class="text-xs text-[rgb(var(--color-text-secondary))] font-mono">#ef4444</p>
+  </Card>
+  <Card class="p-4">
+    <div class="h-12 rounded-lg mb-2" style="background: #3b82f6"></div>
+    <p class="text-sm font-medium">Info</p>
+    <p class="text-xs text-[rgb(var(--color-text-secondary))] font-mono">#3b82f6</p>
+  </Card>
+</div>
+
+## Contraste y Accesibilidad
+
+<Callout variant="info">
+  Todas las combinaciones de colores deben mantener un contraste mínimo de 4.5:1 para texto normal y 3:1 para texto grande, según WCAG AA.
+</Callout>
+
+### Uso en Modo Claro y Oscuro
+
+Los colores neutros están diseñados para funcionar en ambos temas. El blanco puro nunca debe usarse como fondo en modo oscuro, y el negro puro nunca debe usarse en modo claro.

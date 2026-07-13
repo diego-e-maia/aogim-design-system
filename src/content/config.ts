@@ -1,25 +1,23 @@
 import { z, defineCollection } from 'astro:content';
 
-const brandCollection = defineCollection({
-  type: 'content',
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
-    order: z.number().default(99),
-    icon: z.string().optional(),
-  }),
+const brandSchema = z.object({
+  title: z.string(),
+  description: z.string(),
+  order: z.number().default(99),
+  icon: z.string().optional(),
 });
 
-const guidesCollection = defineCollection({
-  type: 'content',
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
-    order: z.number().default(99),
-  }),
+const guideSchema = z.object({
+  title: z.string(),
+  description: z.string(),
+  order: z.number().default(99),
 });
 
 export const collections = {
-  brand: brandCollection,
-  guides: guidesCollection,
+  brand: defineCollection({ type: 'content', schema: brandSchema }),
+  'brand-en': defineCollection({ type: 'content', schema: brandSchema }),
+  'brand-es': defineCollection({ type: 'content', schema: brandSchema }),
+  guides: defineCollection({ type: 'content', schema: guideSchema }),
+  'guides-en': defineCollection({ type: 'content', schema: guideSchema }),
+  'guides-es': defineCollection({ type: 'content', schema: guideSchema }),
 };

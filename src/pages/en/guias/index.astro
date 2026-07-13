@@ -1,0 +1,39 @@
+---
+import { getCollection } from 'astro:content';
+import MainLayout from '../../../layouts/MainLayout.astro';
+import Section from '../../../components/ui/Section.astro';
+import Card from '../../../components/ui/Card.astro';
+
+const guides = await getCollection('guides-en');
+guides.sort((a, b) => a.data.order - b.data.order);
+
+const icons: Record<string, string> = {
+  'getting-started': 'M13 10V3L4 14h7v7l9-11h-7z',
+  'using-components': 'M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4',
+  'brand-guide': 'M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01',
+  'holyrics-setup': 'M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3',
+  'obs-setup': 'M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z',
+};
+const colors = ['brand-500', 'sacred-500', 'green-500', 'blue-500', 'purple-500'];
+---
+
+<MainLayout locale="en" title="Guides | AOGIM Design System" description="Practical tutorials for using the AOGIM Design System — getting started, components, brand guide, Holyrics and OBS.">
+  <Section title="Guides & Training" description="Practical tutorials for using the AOGIM Design System.">
+    <p class="text-[rgb(var(--color-text-secondary))] mb-8">Learn how to set up, use, and get the most out of design system resources.</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {guides.map((guide, i) => (
+        <Card class="p-8 hover:border-brand-500/50 transition-colors">
+          <a href={`/en/guias/${guide.slug}`}>
+            <div class={`w-12 h-12 rounded-xl bg-${colors[i % colors.length]}/10 flex items-center justify-center mb-4`}>
+              <svg class={`w-6 h-6 text-${colors[i % colors.length]}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={icons[guide.slug] || 'M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253'} />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">{guide.data.title}</h3>
+            <p class="text-[rgb(var(--color-text-secondary))]">{guide.data.description}</p>
+          </a>
+        </Card>
+      ))}
+    </div>
+  </Section>
+</MainLayout>

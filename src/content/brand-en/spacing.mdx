@@ -1,0 +1,86 @@
+---
+title: Spacing
+description: Spacing system, grid, and alignment for consistent layouts.
+order: 5
+icon: grid
+---
+
+import Card from '../../components/ui/Card.astro';
+import Callout from '../../components/ui/Callout.astro';
+
+We use a linear 4px (0.25rem) scale to maintain consistency across all components.
+
+## Spacing Scale
+
+<div class="space-y-3 my-8">
+  <div class="flex items-center gap-4 p-3 rounded-xl bg-dark-100 dark:bg-dark-800">
+    <span class="text-xs font-mono text-[rgb(var(--color-text-secondary))] w-24">0.25rem / 4px</span>
+    <span class="text-xs text-[rgb(var(--color-text-secondary))] w-6">1</span>
+    <div class="h-2 rounded" style="width: 4px; background: #d68020"></div>
+  </div>
+  <div class="flex items-center gap-4 p-3 rounded-xl bg-dark-100 dark:bg-dark-800">
+    <span class="text-xs font-mono text-[rgb(var(--color-text-secondary))] w-24">0.5rem / 8px</span>
+    <span class="text-xs text-[rgb(var(--color-text-secondary))] w-6">2</span>
+    <div class="h-2 rounded" style="width: 8px; background: #d68020"></div>
+  </div>
+  <div class="flex items-center gap-4 p-3 rounded-xl bg-dark-100 dark:bg-dark-800">
+    <span class="text-xs font-mono text-[rgb(var(--color-text-secondary))] w-24">1rem / 16px</span>
+    <span class="text-xs text-[rgb(var(--color-text-secondary))] w-6">4</span>
+    <div class="h-2 rounded" style="width: 16px; background: #d68020"></div>
+  </div>
+  <div class="flex items-center gap-4 p-3 rounded-xl bg-dark-100 dark:bg-dark-800">
+    <span class="text-xs font-mono text-[rgb(var(--color-text-secondary))] w-24">2rem / 32px</span>
+    <span class="text-xs text-[rgb(var(--color-text-secondary))] w-6">8</span>
+    <div class="h-2 rounded" style="width: 32px; background: #d68020"></div>
+  </div>
+  <div class="flex items-center gap-4 p-3 rounded-xl bg-dark-100 dark:bg-dark-800">
+    <span class="text-xs font-mono text-[rgb(var(--color-text-secondary))] w-24">4rem / 64px</span>
+    <span class="text-xs text-[rgb(var(--color-text-secondary))] w-6">16</span>
+    <div class="h-2 rounded" style="width: 64px; background: #d68020"></div>
+  </div>
+  <div class="flex items-center gap-4 p-3 rounded-xl bg-dark-100 dark:bg-dark-800">
+    <span class="text-xs font-mono text-[rgb(var(--color-text-secondary))] w-24">8rem / 128px</span>
+    <span class="text-xs text-[rgb(var(--color-text-secondary))] w-6">32</span>
+    <div class="h-2 rounded" style="width: 128px; background: #d68020"></div>
+  </div>
+</div>
+
+## Scale Values
+
+| Token | Rem | Pixels | Usage |
+|-------|-----|--------|-------|
+| 1 | 0.25rem | 4px | Icons, thin borders |
+| 2 | 0.5rem | 8px | Small inner padding |
+| 3 | 0.75rem | 12px | Gap between elements |
+| 4 | 1rem | 16px | Card padding, default gap |
+| 5 | 1.25rem | 20px | Section margin |
+| 6 | 1.5rem | 24px | Container padding |
+| 8 | 2rem | 32px | Section margin |
+| 12 | 3rem | 48px | Large sections |
+| 16 | 4rem | 64px | Page padding |
+| 24 | 6rem | 96px | Hero sections |
+
+## Application Examples
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+  <Card class="p-6">
+    <p class="text-xs text-[rgb(var(--color-text-secondary))] mb-3">gap-2 (8px) between inline elements</p>
+    <div class="flex gap-2">
+      <div class="w-10 h-10 rounded-lg bg-brand-500/20"></div>
+      <div class="w-10 h-10 rounded-lg bg-brand-500/30"></div>
+      <div class="w-10 h-10 rounded-lg bg-brand-500/40"></div>
+    </div>
+  </Card>
+  <Card class="p-6">
+    <p class="text-xs text-[rgb(var(--color-text-secondary))] mb-3">space-y-4 (16px) between blocks</p>
+    <div class="space-y-4">
+      <div class="w-full h-8 rounded-lg bg-sacred-500/20"></div>
+      <div class="w-3/4 h-8 rounded-lg bg-sacred-500/30"></div>
+      <div class="w-1/2 h-8 rounded-lg bg-sacred-500/40"></div>
+    </div>
+  </Card>
+</div>
+
+<Callout>
+  The 4px scale ensures all design elements maintain harmonious proportions with each other, creating consistent visual rhythm.
+</Callout>

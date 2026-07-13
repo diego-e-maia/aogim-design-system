@@ -186,13 +186,13 @@ export const translations: Record<string, Translations> = {
       {
         title: 'Fundamentals',
         items: [
-          { title: 'Overview', href: '/fundamentos' },
-          { title: 'Brand', href: '/fundamentos/marca' },
-          { title: 'Colors', href: '/fundamentos/cores' },
-          { title: 'Typography', href: '/fundamentos/tipografia' },
-          { title: 'Photography', href: '/fundamentos/fotografia' },
-          { title: 'Spacing', href: '/fundamentos/espacamentos' },
-          { title: 'Icons', href: '/fundamentos/icones' },
+          { title: 'Overview', href: '/en/fundamentos' },
+          { title: 'Brand', href: '/en/fundamentos/brand' },
+          { title: 'Colors', href: '/en/fundamentos/colors' },
+          { title: 'Typography', href: '/en/fundamentos/typography' },
+          { title: 'Photography', href: '/en/fundamentos/photography' },
+          { title: 'Spacing', href: '/en/fundamentos/spacing' },
+          { title: 'Icons', href: '/en/fundamentos/icons' },
         ],
       },
       {
@@ -222,11 +222,11 @@ export const translations: Record<string, Translations> = {
       {
         title: 'Guides',
         items: [
-          { title: 'Getting Started', href: '/guias/primeiros-passos' },
-          { title: 'Using Components', href: '/guias/usando-componentes' },
-          { title: 'Brand Guide', href: '/guias/guia-marca' },
-          { title: 'Holyrics Setup', href: '/guias/configurar-holyrics' },
-          { title: 'OBS Setup', href: '/guias/configurar-obs' },
+          { title: 'Getting Started', href: '/en/guias/getting-started' },
+          { title: 'Using Components', href: '/en/guias/using-components' },
+          { title: 'Brand Guide', href: '/en/guias/brand-guide' },
+          { title: 'Holyrics Setup', href: '/en/guias/holyrics-setup' },
+          { title: 'OBS Setup', href: '/en/guias/obs-setup' },
         ],
       },
       {
@@ -251,7 +251,7 @@ export const translations: Record<string, Translations> = {
         title: 'Resources',
         items: [
           { title: 'Documentation', href: '/docs' },
-          { title: 'Getting Started', href: '/guia-de-inicio' },
+          { title: 'Getting Started', href: '/en/guias/getting-started' },
           { title: 'Examples', href: '/exemplos' },
         ],
       },
@@ -300,13 +300,13 @@ export const translations: Record<string, Translations> = {
       {
         title: 'Fundamentos',
         items: [
-          { title: 'Visión General', href: '/fundamentos' },
-          { title: 'Marca', href: '/fundamentos/marca' },
-          { title: 'Colores', href: '/fundamentos/cores' },
-          { title: 'Tipografía', href: '/fundamentos/tipografia' },
-          { title: 'Fotografía', href: '/fundamentos/fotografia' },
-          { title: 'Espaciados', href: '/fundamentos/espacamentos' },
-          { title: 'Iconos', href: '/fundamentos/icones' },
+          { title: 'Visión General', href: '/es/fundamentos' },
+          { title: 'Marca', href: '/es/fundamentos/marca' },
+          { title: 'Colores', href: '/es/fundamentos/colores' },
+          { title: 'Tipografía', href: '/es/fundamentos/tipografia' },
+          { title: 'Fotografía', href: '/es/fundamentos/fotografia' },
+          { title: 'Espaciados', href: '/es/fundamentos/espaciados' },
+          { title: 'Iconos', href: '/es/fundamentos/iconos' },
         ],
       },
       {
@@ -336,11 +336,11 @@ export const translations: Record<string, Translations> = {
       {
         title: 'Guías',
         items: [
-          { title: 'Primeros Pasos', href: '/guias/primeiros-passos' },
-          { title: 'Usando Componentes', href: '/guias/usando-componentes' },
-          { title: 'Guía de Marca', href: '/guias/guia-marca' },
-          { title: 'Configurar Holyrics', href: '/guias/configurar-holyrics' },
-          { title: 'Configurar OBS', href: '/guias/configurar-obs' },
+          { title: 'Primeros Pasos', href: '/es/guias/primeros-pasos' },
+          { title: 'Usando Componentes', href: '/es/guias/usando-componentes' },
+          { title: 'Guía de Marca', href: '/es/guias/guia-marca' },
+          { title: 'Configurar Holyrics', href: '/es/guias/configurar-holyrics' },
+          { title: 'Configurar OBS', href: '/es/guias/configurar-obs' },
         ],
       },
       {
@@ -365,8 +365,8 @@ export const translations: Record<string, Translations> = {
         title: 'Recursos',
         items: [
           { title: 'Documentación', href: '/docs' },
-          { title: 'Guía de Inicio', href: '/guia-de-inicio' },
-          { title: 'Ejemplos', href: '/exemplos' },
+          { title: 'Guía de Inicio', href: '/es/guias/primeros-pasos' },
+          { title: 'Ejemplos', href: '/ejemplos' },
         ],
       },
       community: {
