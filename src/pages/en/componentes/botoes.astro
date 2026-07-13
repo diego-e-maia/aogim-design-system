@@ -1,0 +1,82 @@
+---
+import MainLayout from '../../../layouts/MainLayout.astro';
+import Section from '../../../components/ui/Section.astro';
+import Card from '../../../components/ui/Card.astro';
+import Button from '../../../components/ui/Button.astro';
+import CodeBlock from '../../../components/ui/CodeBlock.astro';
+---
+
+<MainLayout locale="en" title="Buttons | AOGIM Design System" description="Button component with primary, secondary, ghost, and danger variants in sm, md, and lg sizes. Supports link mode.">
+  <Section title="Buttons" description="Button component with multiple variants and sizes.">
+    <div class="space-y-12">
+
+      <div>
+        <h3 class="text-2xl font-bold mb-6">Variants</h3>
+        <div class="flex flex-wrap gap-4 mb-8">
+          <Button>Primary</Button>
+          <Button variant="secondary">Secondary</Button>
+          <Button variant="ghost">Ghost</Button>
+          <Button variant="danger">Danger</Button>
+        </div>
+        <CodeBlock code={`<Button>Primary</Button>
+<Button variant="secondary">Secondary</Button>
+<Button variant="ghost">Ghost</Button>
+<Button variant="danger">Danger</Button>`} language="astro" filename="Button.astro" />
+      </div>
+
+      <div>
+        <h3 class="text-2xl font-bold mb-6">Sizes</h3>
+        <div class="flex flex-wrap items-center gap-4 mb-8">
+          <Button size="sm">Small</Button>
+          <Button size="md">Medium</Button>
+          <Button size="lg">Large</Button>
+        </div>
+        <CodeBlock code={`<Button size="sm">Small</Button>
+<Button size="md">Medium</Button>
+<Button size="lg">Large</Button>`} language="astro" filename="Button.astro" />
+      </div>
+
+      <div>
+        <h3 class="text-2xl font-bold mb-6">As Link</h3>
+        <div class="flex gap-4 mb-8">
+          <Button href="/fundamentos">Link Primary</Button>
+          <Button variant="secondary" href="/fundamentos">Link Secondary</Button>
+        </div>
+      </div>
+
+      <Card class="p-6">
+        <h4 class="font-semibold mb-2">Properties</h4>
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-[rgb(var(--color-border))]">
+              <th class="text-left p-2">Prop</th>
+              <th class="text-left p-2">Type</th>
+              <th class="text-left p-2">Default</th>
+              <th class="text-left p-2">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-[rgb(var(--color-border))]">
+              <td class="p-2 font-mono">variant</td>
+              <td class="p-2">primary | secondary | ghost | danger</td>
+              <td class="p-2">primary</td>
+              <td class="p-2">Button visual style</td>
+            </tr>
+            <tr class="border-b border-[rgb(var(--color-border))]">
+              <td class="p-2 font-mono">size</td>
+              <td class="p-2">sm | md | lg</td>
+              <td class="p-2">md</td>
+              <td class="p-2">Button size</td>
+            </tr>
+            <tr>
+              <td class="p-2 font-mono">href</td>
+              <td class="p-2">string (optional)</td>
+              <td class="p-2">—</td>
+              <td class="p-2">If set, renders as link</td>
+            </tr>
+          </tbody>
+        </table>
+      </Card>
+    </div>
+  </Section>
+</MainLayout>

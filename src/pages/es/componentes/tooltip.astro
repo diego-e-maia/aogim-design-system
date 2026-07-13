@@ -1,0 +1,67 @@
+---
+import MainLayout from '../../../layouts/MainLayout.astro';
+import Section from '../../../components/ui/Section.astro';
+import Tooltip from '../../../components/ui/Tooltip.astro';
+import CodeBlock from '../../../components/ui/CodeBlock.astro';
+import Card from '../../../components/ui/Card.astro';
+import Callout from '../../../components/ui/Callout.astro';
+---
+
+<MainLayout locale="es" title="Tooltip | AOGIM Design System" description="Consejos contextuales al pasar el mouse con 4 posiciones: top, bottom, left y right. Soporte de teclado.">
+  <Section title="Tooltip" description="Consejos contextuales al pasar el mouse con 4 posiciones.">
+    <div class="space-y-8">
+
+      <div class="flex flex-wrap items-center gap-8">
+        <Tooltip content="Tooltip en la parte superior" position="top">
+          Superior
+        </Tooltip>
+        <Tooltip content="Tooltip en la parte inferior" position="bottom">
+          Inferior
+        </Tooltip>
+        <Tooltip content="Tooltip a la izquierda" position="left">
+          Izquierda
+        </Tooltip>
+        <Tooltip content="Tooltip a la derecha" position="right">
+          Derecha
+        </Tooltip>
+      </div>
+
+      <CodeBlock code={`<Tooltip content="Texto del consejo" position="top">
+  Pase el mouse aquí
+</Tooltip>
+
+<Tooltip content="Consejo abajo" position="bottom">
+  Elemento
+</Tooltip>`} language="astro" filename="Tooltip.astro" />
+
+      <Card class="p-6">
+        <h4 class="font-semibold mb-3">Propiedades</h4>
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-[rgb(var(--color-border))]">
+              <th class="text-left p-2">Prop</th>
+              <th class="text-left p-2">Tipo</th>
+              <th class="text-left p-2">Default</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-[rgb(var(--color-border))]">
+              <td class="p-2 font-mono">content</td>
+              <td class="p-2">string</td>
+              <td class="p-2">—</td>
+            </tr>
+            <tr>
+              <td class="p-2 font-mono">position</td>
+              <td class="p-2">top | bottom | left | right</td>
+              <td class="p-2">top</td>
+            </tr>
+          </tbody>
+        </table>
+      </Card>
+
+      <Callout>
+        El tooltip aparece en hover y focus (teclado). El elemento objetivo obtiene un cursor de ayuda y borde punteado para indicar interactividad.
+      </Callout>
+    </div>
+  </Section>
+</MainLayout>

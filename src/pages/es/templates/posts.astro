@@ -1,0 +1,36 @@
+---
+import MainLayout from '../../../layouts/MainLayout.astro';
+import Section from '../../../components/ui/Section.astro';
+import Card from '../../../components/ui/Card.astro';
+---
+
+<MainLayout locale="es" title="Posts | AOGIM Design System" description="Plantillas para artículos, noticias y posts de blog con metadatos de autor y fecha.">
+  <Section title="Posts" description="Plantillas para artículos, noticias y posts de blog.">
+    <div class="space-y-6">
+      <Card class="p-6">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="w-8 h-8 rounded-full bg-brand-500/20"></div>
+          <div>
+            <p class="text-sm font-medium">Autor</p>
+            <p class="text-xs text-[rgb(var(--color-text-secondary))">12 Ene 2024</p>
+          </div>
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Título del Post</h3>
+        <p class="text-[rgb(var(--color-text-secondary))] mb-3">Resumen del contenido del post con descripción breve...</p>
+        <span class="text-sm text-brand-500 font-medium">Leer más →</span>
+      </Card>
+      <Card class="p-6">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="w-8 h-8 rounded-full bg-sacred-500/20"></div>
+          <div>
+            <p class="text-sm font-medium">Autor</p>
+            <p class="text-xs text-[rgb(var(--color-text-secondary))]">10 Ene 2024</p>
+          </div>
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Otro Post</h3>
+        <p class="text-[rgb(var(--color-text-secondary))] mb-3">Resumen del contenido del post con descripción breve...</p>
+        <span class="text-sm text-brand-500 font-medium">Leer más →</span>
+      </Card>
+    </div>
+  </Section>
+</MainLayout>

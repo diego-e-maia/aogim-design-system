@@ -1,0 +1,69 @@
+---
+import MainLayout from '../../../layouts/MainLayout.astro';
+import Section from '../../../components/ui/Section.astro';
+import Modal from '../../../components/ui/Modal.astro';
+import CodeBlock from '../../../components/ui/CodeBlock.astro';
+import Card from '../../../components/ui/Card.astro';
+---
+
+<MainLayout locale="en" title="Modal | AOGIM Design System" description="Modal dialog with overlay, entrance animation, keyboard support (Escape), and managed focus.">
+  <Section title="Modal" description="Dialog with overlay, animation, and keyboard support.">
+    <div class="space-y-8">
+      <div class="flex gap-4">
+        <Modal id="modal-example-1" title="Modal Example">
+          <p slot="trigger">Open Modal</p>
+          <p class="text-[rgb(var(--color-text-secondary))]">This is a functional modal. Click outside, press Cancel, or press Escape to close.</p>
+        </Modal>
+        <Modal id="modal-example-2" title="No Footer">
+          <p slot="trigger">No Footer</p>
+          <p class="text-[rgb(var(--color-text-secondary))]">This modal does not display the footer with buttons. The title is also optional.</p>
+        </Modal>
+      </div>
+
+      <CodeBlock code={`<Modal id="my-modal" title="Title">
+  <p slot="trigger">Open Modal</p>
+  <p>Modal content here.</p>
+</Modal>`} language="astro" filename="Modal.astro" />
+
+      <Card class="p-6">
+        <h4 class="font-semibold mb-3">Properties</h4>
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-[rgb(var(--color-border))]">
+              <th class="text-left p-2">Prop</th>
+              <th class="text-left p-2">Type</th>
+              <th class="text-left p-2">Default</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-[rgb(var(--color-border))]">
+              <td class="p-2 font-mono">id</td>
+              <td class="p-2">string</td>
+              <td class="p-2">—</td>
+            </tr>
+            <tr class="border-b border-[rgb(var(--color-border))]">
+              <td class="p-2 font-mono">title</td>
+              <td class="p-2">string (optional)</td>
+              <td class="p-2">—</td>
+            </tr>
+            <tr>
+              <td class="p-2 font-mono">trigger</td>
+              <td class="p-2">slot</td>
+              <td class="p-2">—</td>
+            </tr>
+          </tbody>
+        </table>
+      </Card>
+
+      <Card class="p-6">
+        <h4 class="font-semibold mb-3">Behavior</h4>
+        <ul class="space-y-2 text-sm text-[rgb(var(--color-text-secondary))]">
+          <li>• Closes when clicking the overlay (backdrop)</li>
+          <li>• Closes when pressing Escape</li>
+          <li>• Entrance animation with scale + fade</li>
+          <li>• Locks body scroll while open</li>
+        </ul>
+      </Card>
+    </div>
+  </Section>
+</MainLayout>

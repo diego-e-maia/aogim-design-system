@@ -1,0 +1,41 @@
+---
+import MainLayout from '../../../layouts/MainLayout.astro';
+import Section from '../../../components/ui/Section.astro';
+import Card from '../../../components/ui/Card.astro';
+import Button from '../../../components/ui/Button.astro';
+---
+
+<MainLayout locale="en" title="Resources | AOGIM Design System" description="Tools and materials for the team — Holyrics templates, OBS overlays, asset library, and downloads.">
+  <Section title="Resources" description="Tools and materials for the team.">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <Card class="p-8 hover:border-brand-500/50 transition-colors">
+        <a href="/recursos/holyrics">
+          <span class="text-3xl mb-4 block">🎵</span>
+          <h3 class="text-xl font-semibold mb-2">Holyrics</h3>
+          <p class="text-[rgb(var(--color-text-secondary))]">Templates and settings for the Holyrics presentation software.</p>
+        </a>
+      </Card>
+      <Card class="p-8 hover:border-brand-500/50 transition-colors">
+        <a href="/recursos/obs">
+          <span class="text-3xl mb-4 block">🎥</span>
+          <h3 class="text-xl font-semibold mb-2">OBS Studio</h3>
+          <p class="text-[rgb(var(--color-text-secondary))]">Overlays, scenes, and settings for live streaming.</p>
+        </a>
+      </Card>
+      <Card class="p-8 hover:border-brand-500/50 transition-colors">
+        <a href="/recursos/biblioteca">
+          <span class="text-3xl mb-4 block">📚</span>
+          <h3 class="text-xl font-semibold mb-2">Library</h3>
+          <p class="text-[rgb(var(--color-text-secondary))]">Assets, media, and visual resources for download.</p>
+        </a>
+      </Card>
+      <Card class="p-8 hover:border-brand-500/50 transition-colors">
+        <a href="/recursos/downloads">
+          <span class="text-3xl mb-4 block">📦</span>
+          <h3 class="text-xl font-semibold mb-2">Downloads</h3>
+          <p class="text-[rgb(var(--color-text-secondary))]">Design system files for download.</p>
+        </a>
+      </Card>
+    </div>
+  </Section>
+</MainLayout>

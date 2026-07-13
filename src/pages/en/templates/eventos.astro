@@ -1,0 +1,41 @@
+---
+import MainLayout from '../../../layouts/MainLayout.astro';
+import Section from '../../../components/ui/Section.astro';
+import Card from '../../../components/ui/Card.astro';
+import Button from '../../../components/ui/Button.astro';
+---
+
+<MainLayout locale="en" title="Events | AOGIM Design System" description="Models for promoting and detailing AOGIM events with date and description.">
+  <Section title="Events" description="Models for promoting and detailing events.">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <Card class="p-6">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="text-center">
+            <p class="text-2xl font-bold text-brand-500">15</p>
+            <p class="text-xs text-[rgb(var(--color-text-secondary))]">MAR</p>
+          </div>
+          <div>
+            <h3 class="font-semibold">Celebration Service</h3>
+            <p class="text-sm text-[rgb(var(--color-text-secondary))]">Sunday, 7pm</p>
+          </div>
+        </div>
+        <p class="text-sm text-[rgb(var(--color-text-secondary))] mb-4">Come celebrate with us in this special revival service.</p>
+        <Button size="sm">Learn more</Button>
+      </Card>
+      <Card class="p-6">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="text-center">
+            <p class="text-2xl font-bold text-sacred-500">22</p>
+            <p class="text-xs text-[rgb(var(--color-text-secondary))]">MAR</p>
+          </div>
+          <div>
+            <h3 class="font-semibold">Youth Meeting</h3>
+            <p class="text-sm text-[rgb(var(--color-text-secondary))]">Saturday, 6pm</p>
+          </div>
+        </div>
+        <p class="text-sm text-[rgb(var(--color-text-secondary))] mb-4">A special meeting for the youth of our church.</p>
+        <Button size="sm">Learn more</Button>
+      </Card>
+    </div>
+  </Section>
+</MainLayout>

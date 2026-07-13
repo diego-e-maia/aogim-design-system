@@ -1,0 +1,89 @@
+---
+import MainLayout from '../../../layouts/MainLayout.astro';
+import Section from '../../../components/ui/Section.astro';
+import Card from '../../../components/ui/Card.astro';
+import Callout from '../../../components/ui/Callout.astro';
+---
+
+<MainLayout locale="es" title="Descargas | AOGIM Design System" description="Archivos del design system listos para descargar — logo, paletas, tokens, plantillas Holyrics y overlays OBS.">
+  <Section title="Descargas" description="Archivos del design system listos para descargar.">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+
+      <Card class="p-6 flex items-center justify-between">
+        <div>
+          <h3 class="font-semibold mb-1">Logo AOGIM</h3>
+          <p class="text-sm text-[rgb(var(--color-text-secondary))]">SVG — gradiente, fondo claro y oscuro</p>
+        </div>
+        <div class="flex gap-2">
+          <a href="/assets/logo/aogim-logo.svg" download class="px-3 py-1.5 text-sm font-medium rounded-lg bg-brand-500 text-white hover:bg-brand-600 transition-colors">Descargar</a>
+        </div>
+      </Card>
+
+      <Card class="p-6 flex items-center justify-between">
+        <div>
+          <h3 class="font-semibold mb-1">Paleta de Colores</h3>
+          <p class="text-sm text-[rgb(var(--color-text-secondary))]">JSON + CSS — colores de la marca</p>
+        </div>
+        <div class="flex gap-2">
+          <a href="/assets/colors/aogim-colors.json" download class="px-3 py-1.5 text-sm font-medium rounded-lg bg-brand-500 text-white hover:bg-brand-600 transition-colors">JSON</a>
+          <a href="/assets/colors/aogim-colors.css" download class="px-3 py-1.5 text-sm font-medium rounded-lg bg-dark-100 dark:bg-dark-800 text-[rgb(var(--color-text))] hover:bg-dark-200 dark:hover:bg-dark-700 transition-colors">CSS</a>
+        </div>
+      </Card>
+
+      <Card class="p-6 flex items-center justify-between">
+        <div>
+          <h3 class="font-semibold mb-1">Design Tokens</h3>
+          <p class="text-sm text-[rgb(var(--color-text-secondary))]">JSON + CSS — colores, tipografía, espaciados</p>
+        </div>
+        <div class="flex gap-2">
+          <a href="/assets/tokens/aogim-tokens.json" download class="px-3 py-1.5 text-sm font-medium rounded-lg bg-brand-500 text-white hover:bg-brand-600 transition-colors">JSON</a>
+          <a href="/assets/tokens/aogim-tokens.css" download class="px-3 py-1.5 text-sm font-medium rounded-lg bg-dark-100 dark:bg-dark-800 text-[rgb(var(--color-text))] hover:bg-dark-200 dark:hover:bg-dark-700 transition-colors">CSS</a>
+        </div>
+      </Card>
+
+      <Card class="p-6 flex items-center justify-between">
+        <div>
+          <h3 class="font-semibold mb-1">Fuentes</h3>
+          <p class="text-sm text-[rgb(var(--color-text-secondary))]">Google Fonts — Inter + JetBrains Mono</p>
+        </div>
+        <a href="https://fonts.google.com/specimen/Inter" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 text-sm font-medium rounded-lg bg-dark-100 dark:bg-dark-800 text-[rgb(var(--color-text))] hover:bg-dark-200 dark:hover:bg-dark-700 transition-colors">Enlace</a>
+      </Card>
+
+      <Card class="p-6 flex items-center justify-between">
+        <div>
+          <h3 class="font-semibold mb-1">Plantilla Holyrics — Letra</h3>
+          <p class="text-sm text-[rgb(var(--color-text-secondary))]">HTML — pantalla de letras para proyección</p>
+        </div>
+        <a href="/assets/holyrics/template-letra.html" download class="px-3 py-1.5 text-sm font-medium rounded-lg bg-brand-500 text-white hover:bg-brand-600 transition-colors">Descargar</a>
+      </Card>
+
+      <Card class="p-6 flex items-center justify-between">
+        <div>
+          <h3 class="font-semibold mb-1">Plantilla Holyrics — Avisos</h3>
+          <p class="text-sm text-[rgb(var(--color-text-secondary))]">HTML — pantalla de avisos para proyección</p>
+        </div>
+        <a href="/assets/holyrics/template-avisos.html" download class="px-3 py-1.5 text-sm font-medium rounded-lg bg-brand-500 text-white hover:bg-brand-600 transition-colors">Descargar</a>
+      </Card>
+
+      <Card class="p-6 flex items-center justify-between">
+        <div>
+          <h3 class="font-semibold mb-1">Overlay OBS — Principal</h3>
+          <p class="text-sm text-[rgb(var(--color-text-secondary))]">HTML — overlay con barra inferior y logo</p>
+        </div>
+        <a href="/assets/obs/overlay-principal.html" download class="px-3 py-1.5 text-sm font-medium rounded-lg bg-brand-500 text-white hover:bg-brand-600 transition-colors">Descargar</a>
+      </Card>
+
+      <Card class="p-6 flex items-center justify-between">
+        <div>
+          <h3 class="font-semibold mb-1">Overlay OBS — Música</h3>
+          <p class="text-sm text-[rgb(var(--color-text-secondary))]">HTML — overlay para letras de música</p>
+        </div>
+        <a href="/assets/obs/overlay-musica.html" download class="px-3 py-1.5 text-sm font-medium rounded-lg bg-brand-500 text-white hover:bg-brand-600 transition-colors">Descargar</a>
+      </Card>
+
+    </div>
+    <Callout>
+      Descargue los archivos haciendo clic en los botones. Los overlays OBS y plantillas Holyrics son HTML puro — ábralo como Browser Source en OBS o impórtelo en Holyrics.
+    </Callout>
+  </Section>
+</MainLayout>

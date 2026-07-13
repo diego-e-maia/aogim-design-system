@@ -1,0 +1,63 @@
+---
+import MainLayout from '../../../layouts/MainLayout.astro';
+import Section from '../../../components/ui/Section.astro';
+import Tabs from '../../../components/ui/Tabs.astro';
+import CodeBlock from '../../../components/ui/CodeBlock.astro';
+import Card from '../../../components/ui/Card.astro';
+
+const tabsCode = `<Tabs
+  tabs={[
+    { label: 'HTML', content: 'Contenido HTML...' },
+    { label: 'CSS', content: 'Contenido CSS...' },
+    { label: 'JS', content: 'Contenido JS...' },
+  ]}
+/>`;
+
+const typeLabel = '{ label: string, content: string, icon?: string }[]';
+---
+
+<MainLayout locale="es" title="Pestañas | AOGIM Design System" description="Navegación por pestañas con soporte de teclado (flechas direccionales), roles ARIA y foco gestionado.">
+  <Section title="Pestañas" description="Navegación por pestañas con soporte de teclado (flechas direccionales).">
+    <div class="space-y-8">
+      <Tabs
+        tabs={[
+          { label: 'HTML', content: 'Estructura semántica con role="tablist", role="tab" y role="tabpanel" para accesibilidad.' },
+          { label: 'CSS', content: 'Estilización con estados active/inactive, transición suave y tema oscuro.' },
+          { label: 'JS', content: 'Navegación por clic y flechas del teclado (ArrowLeft/ArrowRight) con foco gestionado.' },
+        ]}
+      />
+
+      <CodeBlock code={tabsCode} language="astro" filename="Tabs.astro" />
+
+      <Card class="p-6">
+        <h4 class="font-semibold mb-3">Propiedades</h4>
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-[rgb(var(--color-border))]">
+              <th class="text-left p-2">Prop</th>
+              <th class="text-left p-2">Tipo</th>
+              <th class="text-left p-2">Default</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="p-2 font-mono">tabs</td>
+              <td class="p-2">{typeLabel}</td>
+              <td class="p-2">[]</td>
+            </tr>
+          </tbody>
+        </table>
+      </Card>
+
+      <Card class="p-6">
+        <h4 class="font-semibold mb-3">Accesibilidad</h4>
+        <ul class="space-y-2 text-sm text-[rgb(var(--color-text-secondary))]">
+          <li>• Roles ARIA: tablist, tab, tabpanel</li>
+          <li>• Navegación con flechas izquierda/derecha</li>
+          <li>• Estado aria-selected sincronizado</li>
+          <li>• Foco gestionado entre pestañas</li>
+        </ul>
+      </Card>
+    </div>
+  </Section>
+</MainLayout>

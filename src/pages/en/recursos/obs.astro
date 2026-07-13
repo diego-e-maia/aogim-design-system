@@ -1,0 +1,41 @@
+---
+import MainLayout from '../../../layouts/MainLayout.astro';
+import Section from '../../../components/ui/Section.astro';
+import Card from '../../../components/ui/Card.astro';
+import Callout from '../../../components/ui/Callout.astro';
+---
+
+<MainLayout locale="en" title="OBS Studio | AOGIM Design System" description="Overlays, scenes, and settings for live streaming with AOGIM visual identity in OBS Studio.">
+  <Section title="OBS Studio" description="Overlays, scenes, and settings for live streaming.">
+    <div class="space-y-6">
+      <p class="text-[rgb(var(--color-text-secondary))]">Professional settings for streaming services with AOGIM visual identity.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <Card class="p-6">
+          <h3 class="font-semibold mb-2">Main Overlay</h3>
+          <p class="text-sm text-[rgb(var(--color-text-secondary))] mb-3">Overlay with side bars and camera position.</p>
+          <span class="text-xs text-brand-500 font-medium">1920x1080</span>
+        </Card>
+        <Card class="p-6">
+          <h3 class="font-semibold mb-2">Music Overlay</h3>
+          <p class="text-sm text-[rgb(var(--color-text-secondary))] mb-3">Overlay optimized for displaying lyrics.</p>
+          <span class="text-xs text-brand-500 font-medium">1920x1080</span>
+        </Card>
+        <Card class="p-6">
+          <h3 class="font-semibold mb-2">Background Screen</h3>
+          <p class="text-sm text-[rgb(var(--color-text-secondary))] mb-3">Animated background with brand gradient.</p>
+          <span class="text-xs text-brand-500 font-medium">1920x1080</span>
+        </Card>
+        <Card class="p-6">
+          <h3 class="font-semibold mb-2">Transition Scene</h3>
+          <p class="text-sm text-[rgb(var(--color-text-secondary))] mb-3">Transition screen between service moments.</p>
+          <span class="text-xs text-brand-500 font-medium">1920x1080</span>
+        </Card>
+      </div>
+
+      <Callout>
+        OBS scene files (.json) will be available in the Downloads section.
+      </Callout>
+    </div>
+  </Section>
+</MainLayout>

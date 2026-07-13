@@ -1,0 +1,41 @@
+---
+import MainLayout from '../../../layouts/MainLayout.astro';
+import Section from '../../../components/ui/Section.astro';
+import Card from '../../../components/ui/Card.astro';
+import Callout from '../../../components/ui/Callout.astro';
+---
+
+<MainLayout locale="es" title="Holyrics | AOGIM Design System" description="Plantillas y configuraciones para el software de presentación Holyrics — letras, avisos, bienvenida y cierre.">
+  <Section title="Holyrics" description="Plantillas y configuraciones para el software de presentación Holyrics.">
+    <div class="space-y-6">
+      <p class="text-[rgb(var(--color-text-secondary))]">Modelos listos para letras de música, avisos y programación visual de los cultos.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <Card class="p-6">
+          <h3 class="font-semibold mb-2">Plantilla de Letras</h3>
+          <p class="text-sm text-[rgb(var(--color-text-secondary))] mb-3">Diseño para visualización de letras de canciones con alineación centrada.</p>
+          <span class="text-xs text-brand-500 font-medium">.holyrics</span>
+        </Card>
+        <Card class="p-6">
+          <h3 class="font-semibold mb-2">Plantilla de Avisos</h3>
+          <p class="text-sm text-[rgb(var(--color-text-secondary))] mb-3">Diseño para avisos e informativos durante los cultos.</p>
+          <span class="text-xs text-brand-500 font-medium">.holyrics</span>
+        </Card>
+        <Card class="p-6">
+          <h3 class="font-semibold mb-2">Plantilla de Bienvenida</h3>
+          <p class="text-sm text-[rgb(var(--color-text-secondary))] mb-3">Pantalla inicial de bienvenida con la identidad AOGIM.</p>
+          <span class="text-xs text-brand-500 font-medium">.holyrics</span>
+        </Card>
+        <Card class="p-6">
+          <h3 class="font-semibold mb-2">Plantilla de Cierre</h3>
+          <p class="text-sm text-[rgb(var(--color-text-secondary))] mb-3">Pantalla de cierre con información de la próxima programación.</p>
+          <span class="text-xs text-brand-500 font-medium">.holyrics</span>
+        </Card>
+      </div>
+
+      <Callout>
+        Los archivos de plantilla Holyrics estarán disponibles para descargar en la sección Descargas.
+      </Callout>
+    </div>
+  </Section>
+</MainLayout>

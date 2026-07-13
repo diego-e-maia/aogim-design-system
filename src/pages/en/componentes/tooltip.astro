@@ -1,0 +1,67 @@
+---
+import MainLayout from '../../../layouts/MainLayout.astro';
+import Section from '../../../components/ui/Section.astro';
+import Tooltip from '../../../components/ui/Tooltip.astro';
+import CodeBlock from '../../../components/ui/CodeBlock.astro';
+import Card from '../../../components/ui/Card.astro';
+import Callout from '../../../components/ui/Callout.astro';
+---
+
+<MainLayout locale="en" title="Tooltip | AOGIM Design System" description="Contextual tooltips on hover with 4 positions: top, bottom, left, and right. Keyboard support.">
+  <Section title="Tooltip" description="Contextual tooltips on hover with 4 positions.">
+    <div class="space-y-8">
+
+      <div class="flex flex-wrap items-center gap-8">
+        <Tooltip content="Top tooltip" position="top">
+          Top
+        </Tooltip>
+        <Tooltip content="Bottom tooltip" position="bottom">
+          Bottom
+        </Tooltip>
+        <Tooltip content="Left tooltip" position="left">
+          Left
+        </Tooltip>
+        <Tooltip content="Right tooltip" position="right">
+          Right
+        </Tooltip>
+      </div>
+
+      <CodeBlock code={`<Tooltip content="Tooltip text" position="top">
+  Hover here
+</Tooltip>
+
+<Tooltip content="Tooltip below" position="bottom">
+  Element
+</Tooltip>`} language="astro" filename="Tooltip.astro" />
+
+      <Card class="p-6">
+        <h4 class="font-semibold mb-3">Properties</h4>
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-[rgb(var(--color-border))]">
+              <th class="text-left p-2">Prop</th>
+              <th class="text-left p-2">Type</th>
+              <th class="text-left p-2">Default</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-[rgb(var(--color-border))]">
+              <td class="p-2 font-mono">content</td>
+              <td class="p-2">string</td>
+              <td class="p-2">—</td>
+            </tr>
+            <tr>
+              <td class="p-2 font-mono">position</td>
+              <td class="p-2">top | bottom | left | right</td>
+              <td class="p-2">top</td>
+            </tr>
+          </tbody>
+        </table>
+      </Card>
+
+      <Callout>
+        The tooltip appears on hover and focus (keyboard). The target element gets a help cursor and a dotted outline to indicate interactivity.
+      </Callout>
+    </div>
+  </Section>
+</MainLayout>

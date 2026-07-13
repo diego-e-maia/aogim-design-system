@@ -1,0 +1,41 @@
+---
+import MainLayout from '../../../layouts/MainLayout.astro';
+import Section from '../../../components/ui/Section.astro';
+import Card from '../../../components/ui/Card.astro';
+import Callout from '../../../components/ui/Callout.astro';
+---
+
+<MainLayout locale="en" title="Holyrics | AOGIM Design System" description="Templates and settings for the Holyrics presentation software — lyrics, announcements, welcome, and closing.">
+  <Section title="Holyrics" description="Templates and settings for the Holyrics presentation software.">
+    <div class="space-y-6">
+      <p class="text-[rgb(var(--color-text-secondary))]">Ready-made templates for song lyrics, announcements, and visual programming of services.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <Card class="p-6">
+          <h3 class="font-semibold mb-2">Lyrics Template</h3>
+          <p class="text-sm text-[rgb(var(--color-text-secondary))] mb-3">Layout for displaying song lyrics with centered alignment.</p>
+          <span class="text-xs text-brand-500 font-medium">.holyrics</span>
+        </Card>
+        <Card class="p-6">
+          <h3 class="font-semibold mb-2">Announcements Template</h3>
+          <p class="text-sm text-[rgb(var(--color-text-secondary))] mb-3">Layout for announcements and information during services.</p>
+          <span class="text-xs text-brand-500 font-medium">.holyrics</span>
+        </Card>
+        <Card class="p-6">
+          <h3 class="font-semibold mb-2">Welcome Template</h3>
+          <p class="text-sm text-[rgb(var(--color-text-secondary))] mb-3">Welcome screen with AOGIM identity.</p>
+          <span class="text-xs text-brand-500 font-medium">.holyrics</span>
+        </Card>
+        <Card class="p-6">
+          <h3 class="font-semibold mb-2">Closing Template</h3>
+          <p class="text-sm text-[rgb(var(--color-text-secondary))] mb-3">Closing screen with next schedule information.</p>
+          <span class="text-xs text-brand-500 font-medium">.holyrics</span>
+        </Card>
+      </div>
+
+      <Callout>
+        Holyrics template files will be available for download in the Downloads section.
+      </Callout>
+    </div>
+  </Section>
+</MainLayout>

@@ -1,0 +1,93 @@
+---
+import MainLayout from '../../../layouts/MainLayout.astro';
+import Section from '../../../components/ui/Section.astro';
+import Card from '../../../components/ui/Card.astro';
+
+---
+
+<MainLayout locale="en" title="Library | AOGIM Design System" description="Available assets and visual resources — logos, color palettes, design tokens, OBS overlays, and Holyrics templates.">
+  <Section title="Library" description="Assets and visual resources available in the repository.">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+      <Card class="p-6">
+        <div class="h-32 rounded-xl bg-gradient-to-br from-brand-500 to-brand-700 mb-4 flex items-center justify-center">
+          <span class="text-white text-2xl font-bold">A</span>
+        </div>
+        <h3 class="font-semibold mb-1">Logos</h3>
+        <p class="text-sm text-[rgb(var(--color-text-secondary))] mb-3">AOGIM logo in SVG with gradient.</p>
+        <div class="flex gap-2">
+          <a href="/assets/logo/aogim-logo.svg" download class="text-xs text-brand-500 font-medium hover:underline">SVG</a>
+          <a href="/assets/logo/aogim-logo-light.svg" download class="text-xs text-brand-500 font-medium hover:underline">SVG (dark background)</a>
+        </div>
+      </Card>
+
+      <Card class="p-6">
+        <div class="h-32 rounded-xl bg-gradient-to-br from-sacred-500 to-brand-500 mb-4 flex items-center justify-center">
+          <div class="grid grid-cols-4 gap-1">
+            <div class="w-6 h-6 rounded" style="background:#d68020"></div>
+            <div class="w-6 h-6 rounded" style="background:#8b55ff"></div>
+            <div class="w-6 h-6 rounded" style="background:#27272f"></div>
+            <div class="w-6 h-6 rounded" style="background:#22c55e"></div>
+          </div>
+        </div>
+        <h3 class="font-semibold mb-1">Palettes</h3>
+        <p class="text-sm text-[rgb(var(--color-text-secondary))] mb-3">Brand colors in JSON and CSS.</p>
+        <div class="flex gap-2">
+          <a href="/assets/colors/aogim-colors.json" download class="text-xs text-brand-500 font-medium hover:underline">JSON</a>
+          <a href="/assets/colors/aogim-colors.css" download class="text-xs text-brand-500 font-medium hover:underline">CSS</a>
+        </div>
+      </Card>
+
+      <Card class="p-6">
+        <div class="h-32 rounded-xl bg-gradient-to-tr from-yellow-500/20 via-brand-500/20 to-sacred-500/20 mb-4 flex items-center justify-center">
+          <svg class="w-16 h-16 text-brand-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+        </div>
+        <h3 class="font-semibold mb-1">OBS Overlays</h3>
+        <p class="text-sm text-[rgb(var(--color-text-secondary))] mb-3">Overlays for live streaming.</p>
+        <div class="flex gap-2">
+          <a href="/assets/obs/overlay-principal.html" download class="text-xs text-brand-500 font-medium hover:underline">Main</a>
+          <a href="/assets/obs/overlay-musica.html" download class="text-xs text-brand-500 font-medium hover:underline">Music</a>
+        </div>
+      </Card>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <Card class="p-6">
+        <div class="h-32 rounded-xl bg-gradient-to-br from-green-500/20 to-green-500/5 mb-4 flex items-center justify-center">
+          <span class="text-4xl">🎵</span>
+        </div>
+        <h3 class="font-semibold mb-1">Holyrics Templates</h3>
+        <p class="text-sm text-[rgb(var(--color-text-secondary))] mb-3">HTML templates for projection.</p>
+        <div class="flex gap-2">
+          <a href="/assets/holyrics/template-letra.html" download class="text-xs text-brand-500 font-medium hover:underline">Lyrics</a>
+          <a href="/assets/holyrics/template-avisos.html" download class="text-xs text-brand-500 font-medium hover:underline">Announcements</a>
+        </div>
+      </Card>
+
+      <Card class="p-6">
+        <div class="h-32 rounded-xl bg-gradient-to-br from-brand-500/10 to-brand-500/5 mb-4 flex items-center justify-center">
+          <span class="text-4xl">📐</span>
+        </div>
+        <h3 class="font-semibold mb-1">Design Tokens</h3>
+        <p class="text-sm text-[rgb(var(--color-text-secondary))] mb-3">Complete tokens in JSON and CSS.</p>
+        <div class="flex gap-2">
+          <a href="/assets/tokens/aogim-tokens.json" download class="text-xs text-brand-500 font-medium hover:underline">JSON</a>
+          <a href="/assets/tokens/aogim-tokens.css" download class="text-xs text-brand-500 font-medium hover:underline">CSS</a>
+        </div>
+      </Card>
+
+      <Card class="p-6">
+        <div class="h-32 rounded-xl bg-gradient-to-br from-purple-500/20 to-purple-500/5 mb-4 flex items-center justify-center">
+          <span class="text-4xl">🔤</span>
+        </div>
+        <h3 class="font-semibold mb-1">Fonts</h3>
+        <p class="text-sm text-[rgb(var(--color-text-secondary))] mb-3">Inter and JetBrains Mono on Google Fonts.</p>
+        <div class="flex gap-2">
+          <a href="https://fonts.google.com/specimen/Inter" target="_blank" rel="noopener noreferrer" class="text-xs text-brand-500 font-medium hover:underline">Inter</a>
+          <a href="https://fonts.google.com/specimen/JetBrains+Mono" target="_blank" rel="noopener noreferrer" class="text-xs text-brand-500 font-medium hover:underline">JetBrains Mono</a>
+        </div>
+      </Card>
+    </div>
+  </Section>
+</MainLayout>

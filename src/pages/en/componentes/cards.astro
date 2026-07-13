@@ -1,0 +1,37 @@
+---
+import MainLayout from '../../../layouts/MainLayout.astro';
+import Section from '../../../components/ui/Section.astro';
+import Card from '../../../components/ui/Card.astro';
+import CodeBlock from '../../../components/ui/CodeBlock.astro';
+---
+
+<MainLayout locale="en" title="Cards | AOGIM Design System" description="Versatile containers for grouping content with consistent style. Supports padding, hover, and composition.">
+  <Section title="Cards" description="Versatile containers for grouping content.">
+    <div class="space-y-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <Card class="p-6">
+          <div class="w-10 h-10 rounded-lg bg-brand-500/10 mb-3"></div>
+          <h3 class="font-semibold mb-1">Title</h3>
+          <p class="text-sm text-[rgb(var(--color-text-secondary))]">Card content with description.</p>
+        </Card>
+        <Card class="p-6">
+          <div class="w-10 h-10 rounded-lg bg-sacred-500/10 mb-3"></div>
+          <h3 class="font-semibold mb-1">Title</h3>
+          <p class="text-sm text-[rgb(var(--color-text-secondary))]">Card content with description.</p>
+        </Card>
+        <Card class="p-6">
+          <div class="w-10 h-10 rounded-lg bg-green-500/10 mb-3"></div>
+          <h3 class="font-semibold mb-1">Title</h3>
+          <p class="text-sm text-[rgb(var(--color-text-secondary))]">Card content with description.</p>
+        </Card>
+      </div>
+      <CodeBlock code={`<Card class="p-6">
+  <div class="w-10 h-10 rounded-lg bg-brand-500/10 mb-3"></div>
+  <h3 class="font-semibold mb-1">Title</h3>
+  <p class="text-sm text-[rgb(var(--color-text-secondary))]">
+    Card content with description.
+  </p>
+</Card>`} language="astro" filename="Card.astro" />
+    </div>
+  </Section>
+</MainLayout>

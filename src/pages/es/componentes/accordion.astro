@@ -1,0 +1,75 @@
+---
+import MainLayout from '../../../layouts/MainLayout.astro';
+import Section from '../../../components/ui/Section.astro';
+import Accordion from '../../../components/ui/Accordion.astro';
+import CodeBlock from '../../../components/ui/CodeBlock.astro';
+import Card from '../../../components/ui/Card.astro';
+
+const itemsType = '{ title: string, content: string }[]';
+const singleCode = `<Accordion
+  items={[
+    { title: 'Pregunta 1', content: 'Respuesta 1' },
+    { title: 'Pregunta 2', content: 'Respuesta 2' },
+  ]}
+/>
+
+<Accordion allowMultiple
+  items={[
+    { title: 'Ítem 1', content: 'Contenido' },
+    { title: 'Ítem 2', content: 'Contenido' },
+  ]}
+/>`;
+---
+
+<MainLayout locale="es" title="Acordeón | AOGIM Design System" description="Secciones plegables con animación suave y modos single (una por vez) y multiple (varias abiertas).">
+  <Section title="Acordeón" description="Secciones plegables con animación suave y modos single/multiple.">
+    <div class="space-y-8">
+
+      <h3 class="text-2xl font-bold">Single (predeterminado)</h3>
+      <Accordion
+        items={[
+          { title: '¿Qué es el AOGIM Design System?', content: 'Es un sistema de diseño completo para la Iglesia AOGIM, que contiene directrices de marca, componentes, plantillas y recursos para mantener la coherencia visual en todos los materiales de la iglesia.' },
+          { title: '¿Cómo empezar a usarlo?', content: 'Puede navegar por la documentación, explorar los componentes disponibles y descargar los recursos en la sección de Descargas.' },
+          { title: 'Tecnologías utilizadas', content: 'El proyecto está construido con Astro, TypeScript, Tailwind CSS y MDX. Los componentes son puros con CSS moderno y JavaScript vanilla.' },
+        ]}
+      />
+
+      <h3 class="text-2xl font-bold mt-8">Multiple (abre varios)</h3>
+      <Accordion
+        allowMultiple
+        items={[
+          { title: 'Ítem 1', content: 'Contenido del primer ítem del acordeón.' },
+          { title: 'Ítem 2', content: 'Contenido del segundo ítem del acordeón.' },
+          { title: 'Ítem 3', content: 'Contenido del tercer ítem del acordeón.' },
+        ]}
+      />
+
+      <CodeBlock code={singleCode} language="astro" filename="Accordion.astro" />
+
+      <Card class="p-6">
+        <h4 class="font-semibold mb-3">Propiedades</h4>
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-[rgb(var(--color-border))]">
+              <th class="text-left p-2">Prop</th>
+              <th class="text-left p-2">Tipo</th>
+              <th class="text-left p-2">Default</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-[rgb(var(--color-border))]">
+              <td class="p-2 font-mono">items</td>
+              <td class="p-2">{itemsType}</td>
+              <td class="p-2">[]</td>
+            </tr>
+            <tr>
+              <td class="p-2 font-mono">allowMultiple</td>
+              <td class="p-2">boolean</td>
+              <td class="p-2">false</td>
+            </tr>
+          </tbody>
+        </table>
+      </Card>
+    </div>
+  </Section>
+</MainLayout>

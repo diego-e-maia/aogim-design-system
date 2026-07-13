@@ -1,0 +1,45 @@
+---
+import MainLayout from '../../../layouts/MainLayout.astro';
+import Section from '../../../components/ui/Section.astro';
+import Callout from '../../../components/ui/Callout.astro';
+import Card from '../../../components/ui/Card.astro';
+import CodeBlock from '../../../components/ui/CodeBlock.astro';
+---
+
+<MainLayout locale="en" title="Callouts | AOGIM Design System" description="Visual alerts and notifications with 4 variants: info, warning, danger, and success. Includes optional title.">
+  <Section title="Callouts" description="Visual alerts and notifications with 4 variants.">
+    <div class="space-y-6 mb-8">
+      <Callout title="Info" variant="info">This is an info callout for tips and notes.</Callout>
+      <Callout title="Warning" variant="warning">This is a warning callout about something important.</Callout>
+      <Callout title="Error" variant="danger">This is an error callout for critical problems.</Callout>
+      <Callout title="Success" variant="success">This is a success callout for confirmations.</Callout>
+    </div>
+    <CodeBlock code={`<Callout title="Info" variant="info">
+  This is an info callout.
+</Callout>`} language="astro" filename="Callout.astro" />
+    <Card class="p-6 mt-8">
+      <h4 class="font-semibold mb-2">Properties</h4>
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="border-b border-[rgb(var(--color-border))]">
+            <th class="text-left p-2">Prop</th>
+            <th class="text-left p-2">Type</th>
+            <th class="text-left p-2">Default</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-[rgb(var(--color-border))]">
+            <td class="p-2 font-mono">variant</td>
+            <td class="p-2">info | warning | danger | success</td>
+            <td class="p-2">info</td>
+          </tr>
+          <tr>
+            <td class="p-2 font-mono">title</td>
+            <td class="p-2">string (optional)</td>
+            <td class="p-2">—</td>
+          </tr>
+        </tbody>
+      </table>
+    </Card>
+  </Section>
+</MainLayout>
