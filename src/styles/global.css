@@ -3,6 +3,13 @@
 @tailwind utilities;
 
 @layer base {
+  section:not([data-no-lazy]) {
+    content-visibility: auto;
+    contain-intrinsic-size: 400px;
+  }
+}
+
+@layer base {
   :root {
     --color-brand-primary: 214 128 32;
     --color-brand-secondary: 139 85 255;
