@@ -1,0 +1,41 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Section from '../../components/ui/Section.astro';
+import Card from '../../components/ui/Card.astro';
+import Callout from '../../components/ui/Callout.astro';
+---
+
+<MainLayout title="Holyrics | AOGIM Design System" description="Templates e configurações para o software de apresentação Holyrics — letras, avisos, boas-vindas e encerramento.">
+  <Section title="Holyrics" description="Templates e configurações para o software de apresentação Holyrics.">
+    <div class="space-y-6">
+      <p class="text-[rgb(var(--color-text-secondary))]">Modelos prontos para letras de música, avisos e programação visual dos cultos.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <Card class="p-6">
+          <h3 class="font-semibold mb-2">Template de Letras</h3>
+          <p class="text-sm text-[rgb(var(--color-text-secondary))] mb-3">Layout para exibição de letras de músicas com alinhamento centralizado.</p>
+          <span class="text-xs text-brand-500 font-medium">.holyrics</span>
+        </Card>
+        <Card class="p-6">
+          <h3 class="font-semibold mb-2">Template de Avisos</h3>
+          <p class="text-sm text-[rgb(var(--color-text-secondary))] mb-3">Layout para avisos e informativos durante os cultos.</p>
+          <span class="text-xs text-brand-500 font-medium">.holyrics</span>
+        </Card>
+        <Card class="p-6">
+          <h3 class="font-semibold mb-2">Template de Boas-Vindas</h3>
+          <p class="text-sm text-[rgb(var(--color-text-secondary))] mb-3">Tela inicial de boas-vindas com a identidade AOGIM.</p>
+          <span class="text-xs text-brand-500 font-medium">.holyrics</span>
+        </Card>
+        <Card class="p-6">
+          <h3 class="font-semibold mb-2">Template de Encerramento</h3>
+          <p class="text-sm text-[rgb(var(--color-text-secondary))] mb-3">Tela de encerramento com informações da próxima programação.</p>
+          <span class="text-xs text-brand-500 font-medium">.holyrics</span>
+        </Card>
+      </div>
+
+      <Callout>
+        Os arquivos de template Holyrics estarão disponíveis para download na seção Downloads.
+      </Callout>
+    </div>
+  </Section>
+</MainLayout>

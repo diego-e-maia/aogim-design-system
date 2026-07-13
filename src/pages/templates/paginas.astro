@@ -1,0 +1,26 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Section from '../../components/ui/Section.astro';
+import Card from '../../components/ui/Card.astro';
+---
+
+<MainLayout title="Páginas | AOGIM Design System" description="Layouts de página para landing pages, institucionais e internas com sidebar e TOC.">
+  <Section title="Páginas" description="Layouts de página para landing pages, institucionais e internas.">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <Card class="p-6">
+        <div class="h-32 rounded-lg bg-gradient-to-br from-brand-500/10 to-sacred-500/10 flex items-center justify-center mb-4">
+          <span class="text-2xl font-bold text-[rgb(var(--color-text-secondary))]">Hero</span>
+        </div>
+        <h3 class="font-semibold mb-1">Landing Page</h3>
+        <p class="text-sm text-[rgb(var(--color-text-secondary))]">Hero + seções + footer</p>
+      </Card>
+      <Card class="p-6">
+        <div class="h-32 rounded-lg bg-gradient-to-br from-sacred-500/10 to-brand-500/10 flex items-center justify-center mb-4">
+          <span class="text-2xl font-bold text-[rgb(var(--color-text-secondary))]">Article</span>
+        </div>
+        <h3 class="font-semibold mb-1">Página Interna</h3>
+        <p class="text-sm text-[rgb(var(--color-text-secondary))]">Sidebar + conteúdo + TOC</p>
+      </Card>
+    </div>
+  </Section>
+</MainLayout>

@@ -1,0 +1,125 @@
+export const tokens = {
+  colors: {
+    brand: {
+      primary: '#d68020',
+      secondary: '#8b55ff',
+      accent: '#c86a16',
+    },
+    neutral: {
+      white: '#ffffff',
+      black: '#0d0d12',
+      gray: {
+        50: '#f6f6f7',
+        100: '#e2e2e5',
+        200: '#c4c5cb',
+        300: '#9fa0a9',
+        400: '#7b7c87',
+        500: '#61626e',
+        600: '#4d4d57',
+        700: '#3f3f47',
+        800: '#27272f',
+        900: '#1a1a21',
+        950: '#0d0d12',
+      },
+    },
+    semantic: {
+      success: '#22c55e',
+      warning: '#f59e0b',
+      error: '#ef4444',
+      info: '#3b82f6',
+    },
+  },
+  typography: {
+    fontFamily: {
+      sans: 'Inter, system-ui, sans-serif',
+      display: 'Cal Sans, Inter, system-ui, sans-serif',
+      mono: 'JetBrains Mono, Fira Code, monospace',
+    },
+    fontSize: {
+      xs: '0.75rem',
+      sm: '0.875rem',
+      base: '1rem',
+      lg: '1.125rem',
+      xl: '1.25rem',
+      '2xl': '1.5rem',
+      '3xl': '1.875rem',
+      '4xl': '2.25rem',
+      '5xl': '3rem',
+      '6xl': '3.75rem',
+    },
+    fontWeight: {
+      normal: '400',
+      medium: '500',
+      semibold: '600',
+      bold: '700',
+    },
+    lineHeight: {
+      tight: '1.25',
+      normal: '1.5',
+      relaxed: '1.75',
+    },
+  },
+  spacing: {
+    0: '0',
+    1: '0.25rem',
+    2: '0.5rem',
+    3: '0.75rem',
+    4: '1rem',
+    5: '1.25rem',
+    6: '1.5rem',
+    8: '2rem',
+    10: '2.5rem',
+    12: '3rem',
+    16: '4rem',
+    20: '5rem',
+    24: '6rem',
+    32: '8rem',
+  },
+  borderRadius: {
+    none: '0',
+    sm: '0.25rem',
+    DEFAULT: '0.5rem',
+    md: '0.5rem',
+    lg: '0.75rem',
+    xl: '1rem',
+    '2xl': '1.5rem',
+    '3xl': '2rem',
+    full: '9999px',
+  },
+  shadows: {
+    sm: '0 1px 2px 0 rgb(0 0 0 / 0.05)',
+    DEFAULT: '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
+    md: '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
+    lg: '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
+    xl: '0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)',
+    glow: '0 0 20px rgba(139, 85, 255, 0.15)',
+    'glow-lg': '0 0 40px rgba(139, 85, 255, 0.2)',
+  },
+  animation: {
+    duration: {
+      fast: '150ms',
+      normal: '300ms',
+      slow: '500ms',
+    },
+    easing: {
+      default: 'cubic-bezier(0.4, 0, 0.2, 1)',
+      in: 'cubic-bezier(0.4, 0, 1, 1)',
+      out: 'cubic-bezier(0, 0, 0.2, 1)',
+      'in-out': 'cubic-bezier(0.4, 0, 0.2, 1)',
+    },
+  },
+  layout: {
+    sidebar: {
+      width: '280px',
+    },
+    header: {
+      height: '64px',
+    },
+    maxWidth: {
+      content: '1200px',
+      prose: '720px',
+    },
+  },
+} as const;
+
+export type Tokens = typeof tokens;

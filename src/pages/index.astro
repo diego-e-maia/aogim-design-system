@@ -1,0 +1,244 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Hero from '../components/ui/Hero.astro';
+import Card from '../components/ui/Card.astro';
+import Section from '../components/ui/Section.astro';
+import Badge from '../components/ui/Badge.astro';
+---
+
+<MainLayout
+  title="AOGIM Design System"
+  description="Sistema de Design oficial da Igreja AOGIM — diretrizes de marca, componentes, templates e recursos para manter a consistência visual em todos os materiais da igreja."
+  image="/og-image.svg"
+>
+  <Hero
+    title="AOGIM Design System"
+    description="Uma Igreja. Uma Família. Um Lugar de Transformação."
+  >
+    <div class="flex flex-wrap justify-center gap-4">
+      <a
+        href="/fundamentos"
+        class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-brand-500 text-white font-medium shadow-lg shadow-brand-500/25 hover:bg-brand-600 transition-all"
+      >
+        Começar
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+        </svg>
+      </a>
+      <a
+        href="/componentes"
+        class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-dark-100 dark:bg-dark-800 text-[rgb(var(--color-text))] font-medium border border-[rgb(var(--color-border))] hover:bg-dark-200 dark:hover:bg-dark-700 transition-all"
+      >
+        Componentes
+      </a>
+    </div>
+  </Hero>
+
+  <Section
+    title="Fundamentos"
+    description="Os pilares do nosso sistema de design."
+  >
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <Card class="p-6 hover:border-brand-500/50 transition-colors">
+        <div class="w-10 h-10 rounded-lg bg-brand-500/10 flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-brand-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+          </svg>
+        </div>
+        <h3 class="font-semibold mb-2">
+          <a href="/fundamentos/marca" class="hover:text-brand-500 transition-colors">Marca</a>
+        </h3>
+        <p class="text-sm text-[rgb(var(--color-text-secondary))]">
+          Identidade visual, logotipo e diretrizes de uso.
+        </p>
+      </Card>
+
+      <Card class="p-6 hover:border-brand-500/50 transition-colors">
+        <div class="w-10 h-10 rounded-lg bg-sacred-500/10 flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-sacred-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+          </svg>
+        </div>
+        <h3 class="font-semibold mb-2">
+          <a href="/fundamentos/cores" class="hover:text-brand-500 transition-colors">Cores</a>
+        </h3>
+        <p class="text-sm text-[rgb(var(--color-text-secondary))]">
+          Paleta de cores e semântica de uso.
+        </p>
+      </Card>
+
+      <Card class="p-6 hover:border-brand-500/50 transition-colors">
+        <div class="w-10 h-10 rounded-lg bg-green-500/10 flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
+        </div>
+        <h3 class="font-semibold mb-2">
+          <a href="/fundamentos/tipografia" class="hover:text-brand-500 transition-colors">Tipografia</a>
+        </h3>
+        <p class="text-sm text-[rgb(var(--color-text-secondary))]">
+          Escala tipográfica e hierarquia de textos.
+        </p>
+      </Card>
+
+      <Card class="p-6 hover:border-brand-500/50 transition-colors">
+        <div class="w-10 h-10 rounded-lg bg-yellow-500/10 flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+        </div>
+        <h3 class="font-semibold mb-2">
+          <a href="/fundamentos/fotografia" class="hover:text-brand-500 transition-colors">Fotografia</a>
+        </h3>
+        <p class="text-sm text-[rgb(var(--color-text-secondary))]">
+          Diretrizes de uso de imagens e fotografias.
+        </p>
+      </Card>
+
+      <Card class="p-6 hover:border-brand-500/50 transition-colors">
+        <div class="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+          </svg>
+        </div>
+        <h3 class="font-semibold mb-2">
+          <a href="/fundamentos/espacamentos" class="hover:text-brand-500 transition-colors">Espaçamentos</a>
+        </h3>
+        <p class="text-sm text-[rgb(var(--color-text-secondary))]">
+          Grade e sistema de espaçamento.
+        </p>
+      </Card>
+
+      <Card class="p-6 hover:border-brand-500/50 transition-colors">
+        <div class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+        <h3 class="font-semibold mb-2">
+          <a href="/fundamentos/icones" class="hover:text-brand-500 transition-colors">Ícones</a>
+        </h3>
+        <p class="text-sm text-[rgb(var(--color-text-secondary))]">
+          Biblioteca de ícones e diretrizes de uso.
+        </p>
+      </Card>
+    </div>
+  </Section>
+
+  <Section
+    title="Componentes"
+    description="Elementos reutilizáveis para construir interfaces consistentes."
+  >
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <Card class="p-6 hover:border-brand-500/50 transition-colors">
+        <h3 class="font-semibold mb-2">
+          <a href="/componentes/botoes" class="hover:text-brand-500 transition-colors">Botões</a>
+        </h3>
+        <p class="text-sm text-[rgb(var(--color-text-secondary))]">
+          Diversos estilos e variantes de botões.
+        </p>
+      </Card>
+
+      <Card class="p-6 hover:border-brand-500/50 transition-colors">
+        <h3 class="font-semibold mb-2">
+          <a href="/componentes/cards" class="hover:text-brand-500 transition-colors">Cards</a>
+        </h3>
+        <p class="text-sm text-[rgb(var(--color-text-secondary))]">
+          Containers para agrupar conteúdo.
+        </p>
+      </Card>
+
+      <Card class="p-6 hover:border-brand-500/50 transition-colors">
+        <h3 class="font-semibold mb-2">
+          <a href="/componentes/callouts" class="hover:text-brand-500 transition-colors">Callouts</a>
+        </h3>
+        <p class="text-sm text-[rgb(var(--color-text-secondary))]">
+          Alertas e notificações visuais.
+        </p>
+      </Card>
+
+      <Card class="p-6 hover:border-brand-500/50 transition-colors">
+        <h3 class="font-semibold mb-2">
+          <a href="/componentes/badges" class="hover:text-brand-500 transition-colors">Badges</a>
+        </h3>
+        <p class="text-sm text-[rgb(var(--color-text-secondary))]">
+          Tags e indicadores de status.
+        </p>
+      </Card>
+
+      <Card class="p-6 hover:border-brand-500/50 transition-colors">
+        <h3 class="font-semibold mb-2">
+          <a href="/componentes/formularios" class="hover:text-brand-500 transition-colors">Formulários</a>
+        </h3>
+        <p class="text-sm text-[rgb(var(--color-text-secondary))]">
+          Inputs, selects e elementos de formulário.
+        </p>
+      </Card>
+
+      <Card class="p-6 hover:border-brand-500/50 transition-colors">
+        <h3 class="font-semibold mb-2">
+          <a href="/componentes/modais" class="hover:text-brand-500 transition-colors">Modais</a>
+        </h3>
+        <p class="text-sm text-[rgb(var(--color-text-secondary))]">
+          Diálogos e janelas modais.
+        </p>
+      </Card>
+    </div>
+  </Section>
+
+  <Section
+    title="Recursos"
+    description="Ferramentas e materiais para a equipe."
+  >
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <Card class="p-6 hover:border-brand-500/50 transition-colors">
+        <div class="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center mb-4">
+          <span class="text-xl">🎵</span>
+        </div>
+        <h3 class="font-semibold mb-2">
+          <a href="/recursos/holyrics" class="hover:text-brand-500 transition-colors">Holyrics</a>
+        </h3>
+        <p class="text-sm text-[rgb(var(--color-text-secondary))]">
+          Templates para presentation.
+        </p>
+      </Card>
+
+      <Card class="p-6 hover:border-brand-500/50 transition-colors">
+        <div class="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center mb-4">
+          <span class="text-xl">🎥</span>
+        </div>
+        <h3 class="font-semibold mb-2">
+          <a href="/recursos/obs" class="hover:text-brand-500 transition-colors">OBS</a>
+        </h3>
+        <p class="text-sm text-[rgb(var(--color-text-secondary))]">
+          Configurações e overlays.
+        </p>
+      </Card>
+
+      <Card class="p-6 hover:border-brand-500/50 transition-colors">
+        <div class="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center mb-4">
+          <span class="text-xl">📚</span>
+        </div>
+        <h3 class="font-semibold mb-2">
+          <a href="/recursos/biblioteca" class="hover:text-brand-500 transition-colors">Biblioteca</a>
+        </h3>
+        <p class="text-sm text-[rgb(var(--color-text-secondary))]">
+          Assets e recursos visuais.
+        </p>
+      </Card>
+
+      <Card class="p-6 hover:border-brand-500/50 transition-colors">
+        <div class="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center mb-4">
+          <span class="text-xl">📦</span>
+        </div>
+        <h3 class="font-semibold mb-2">
+          <a href="/recursos/downloads" class="hover:text-brand-500 transition-colors">Downloads</a>
+        </h3>
+        <p class="text-sm text-[rgb(var(--color-text-secondary))]">
+          Arquivos para download.
+        </p>
+      </Card>
+    </div>
+  </Section>
+</MainLayout>

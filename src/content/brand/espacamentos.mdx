@@ -1,0 +1,86 @@
+---
+title: Espaçamentos
+description: Sistema de espaçamento, grade e alinhamento para layouts consistentes.
+order: 5
+icon: grid
+---
+
+import Card from '../../components/ui/Card.astro';
+import Callout from '../../components/ui/Callout.astro';
+
+Usamos uma escala linear baseada em 4px (0.25rem) para manter consistência em todos os componentes.
+
+## Escala de Espaçamento
+
+<div class="space-y-3 my-8">
+  <div class="flex items-center gap-4 p-3 rounded-xl bg-dark-100 dark:bg-dark-800">
+    <span class="text-xs font-mono text-[rgb(var(--color-text-secondary))] w-24">0.25rem / 4px</span>
+    <span class="text-xs text-[rgb(var(--color-text-secondary))] w-6">1</span>
+    <div class="h-2 rounded" style="width: 4px; background: #d68020"></div>
+  </div>
+  <div class="flex items-center gap-4 p-3 rounded-xl bg-dark-100 dark:bg-dark-800">
+    <span class="text-xs font-mono text-[rgb(var(--color-text-secondary))] w-24">0.5rem / 8px</span>
+    <span class="text-xs text-[rgb(var(--color-text-secondary))] w-6">2</span>
+    <div class="h-2 rounded" style="width: 8px; background: #d68020"></div>
+  </div>
+  <div class="flex items-center gap-4 p-3 rounded-xl bg-dark-100 dark:bg-dark-800">
+    <span class="text-xs font-mono text-[rgb(var(--color-text-secondary))] w-24">1rem / 16px</span>
+    <span class="text-xs text-[rgb(var(--color-text-secondary))] w-6">4</span>
+    <div class="h-2 rounded" style="width: 16px; background: #d68020"></div>
+  </div>
+  <div class="flex items-center gap-4 p-3 rounded-xl bg-dark-100 dark:bg-dark-800">
+    <span class="text-xs font-mono text-[rgb(var(--color-text-secondary))] w-24">2rem / 32px</span>
+    <span class="text-xs text-[rgb(var(--color-text-secondary))] w-6">8</span>
+    <div class="h-2 rounded" style="width: 32px; background: #d68020"></div>
+  </div>
+  <div class="flex items-center gap-4 p-3 rounded-xl bg-dark-100 dark:bg-dark-800">
+    <span class="text-xs font-mono text-[rgb(var(--color-text-secondary))] w-24">4rem / 64px</span>
+    <span class="text-xs text-[rgb(var(--color-text-secondary))] w-6">16</span>
+    <div class="h-2 rounded" style="width: 64px; background: #d68020"></div>
+  </div>
+  <div class="flex items-center gap-4 p-3 rounded-xl bg-dark-100 dark:bg-dark-800">
+    <span class="text-xs font-mono text-[rgb(var(--color-text-secondary))] w-24">8rem / 128px</span>
+    <span class="text-xs text-[rgb(var(--color-text-secondary))] w-6">32</span>
+    <div class="h-2 rounded" style="width: 128px; background: #d68020"></div>
+  </div>
+</div>
+
+## Valores da Escala
+
+| Token | Rem | Pixels | Uso |
+|-------|-----|--------|-----|
+| 1 | 0.25rem | 4px | Ícones, bordas finas |
+| 2 | 0.5rem | 8px | Padding interno pequeno |
+| 3 | 0.75rem | 12px | Gap entre elementos |
+| 4 | 1rem | 16px | Padding de cards, gap padrão |
+| 5 | 1.25rem | 20px | Margem entre seções |
+| 6 | 1.5rem | 24px | Padding de containers |
+| 8 | 2rem | 32px | Margem de seções |
+| 12 | 3rem | 48px | Seções grandes |
+| 16 | 4rem | 64px | Padding de página |
+| 24 | 6rem | 96px | Seções hero |
+
+## Exemplos de Aplicação
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+  <Card class="p-6">
+    <p class="text-xs text-[rgb(var(--color-text-secondary))] mb-3">gap-2 (8px) entre elementos inline</p>
+    <div class="flex gap-2">
+      <div class="w-10 h-10 rounded-lg bg-brand-500/20"></div>
+      <div class="w-10 h-10 rounded-lg bg-brand-500/30"></div>
+      <div class="w-10 h-10 rounded-lg bg-brand-500/40"></div>
+    </div>
+  </Card>
+  <Card class="p-6">
+    <p class="text-xs text-[rgb(var(--color-text-secondary))] mb-3">space-y-4 (16px) entre blocos</p>
+    <div class="space-y-4">
+      <div class="w-full h-8 rounded-lg bg-sacred-500/20"></div>
+      <div class="w-3/4 h-8 rounded-lg bg-sacred-500/30"></div>
+      <div class="w-1/2 h-8 rounded-lg bg-sacred-500/40"></div>
+    </div>
+  </Card>
+</div>
+
+<Callout>
+  A escala de 4px garante que todos os elementos do design mantenham proporções harmônicas entre si, criando ritmo visual consistente.
+</Callout>

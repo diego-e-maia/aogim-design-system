@@ -1,0 +1,13 @@
+---
+import SidebarContent from './SidebarContent.astro';
+
+interface Props {
+  locale?: string;
+}
+
+const { locale = 'pt' } = Astro.props;
+---
+
+<aside class="hidden lg:block w-[280px] h-[calc(100vh-64px)] sticky top-16 border-r border-[rgb(var(--color-border))] bg-[rgb(var(--color-sidebar-bg))] overflow-y-auto scrollbar-thin">
+  <SidebarContent locale={locale} />
+</aside>

@@ -1,0 +1,62 @@
+---
+export type TooltipPosition = 'top' | 'bottom' | 'left' | 'right';
+
+interface Props {
+  content: string;
+  position?: TooltipPosition;
+}
+
+const { content, position = 'top' } = Astro.props;
+
+const positionStyles: Record<TooltipPosition, string> = {
+  top: 'bottom-full left-1/2 -translate-x-1/2 mb-2',
+  bottom: 'top-full left-1/2 -translate-x-1/2 mt-2',
+  left: 'right-full top-1/2 -translate-y-1/2 mr-2',
+  right: 'left-full top-1/2 -translate-y-1/2 ml-2',
+};
+
+const arrowStyles: Record<TooltipPosition, string> = {
+  top: 'top-full left-1/2 -translate-x-1/2 border-l-4 border-r-4 border-t-4 border-transparent border-t-dark-800 dark:border-t-dark-600',
+  bottom: 'bottom-full left-1/2 -translate-x-1/2 border-l-4 border-r-4 border-b-4 border-transparent border-b-dark-800 dark:border-b-dark-600',
+  left: 'left-full top-1/2 -translate-y-1/2 border-t-4 border-b-4 border-l-4 border-transparent border-l-dark-800 dark:border-l-dark-600',
+  right: 'right-full top-1/2 -translate-y-1/2 border-t-4 border-b-4 border-r-4 border-transparent border-r-dark-800 dark:border-r-dark-600',
+};
+---
+
+<span class="relative inline-flex tooltip-group">
+  <span
+    data-tooltip-trigger
+    class="cursor-help border-b border-dotted border-[rgb(var(--color-text-secondary))]"
+  >
+    <slot />
+  </span>
+  <span
+    role="tooltip"
+    class={`
+      absolute ${positionStyles[position]} z-50
+      px-3 py-1.5 text-xs font-medium text-white
+      bg-dark-800 dark:bg-dark-600
+      rounded-lg shadow-lg
+      pointer-events-none opacity-0
+      tooltip-content
+      whitespace-nowrap
+    `}
+  >
+    {content}
+    <span class={`absolute ${arrowStyles[position]}`}></span>
+  </span>
+</span>
+
+<style>
+  .tooltip-group {
+    .tooltip-content {
+      transition: opacity 0.15s ease, transform 0.15s ease;
+      transform: translateY(2px);
+    }
+    &:hover .tooltip-content,
+    &:focus-within .tooltip-content {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

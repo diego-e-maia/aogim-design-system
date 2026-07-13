@@ -1,0 +1,71 @@
+---
+title: Usando Componentes
+description: Guia prático de como utilizar os componentes do sistema.
+order: 2
+---
+
+import Callout from '../../components/ui/Callout.astro';
+import Tabs from '../../components/ui/Tabs.astro';
+
+Este guia mostra como utilizar os componentes nos seus projetos.
+
+## Instalação
+
+Se você estiver usando o portal como referência, não precisa instalar nada — os componentes já estão aqui.
+
+Para usar em projetos externos, copie o componente desejado da pasta `src/components/ui/` e ajuste as dependências.
+
+## Estrutura de um Componente
+
+Cada componente segue este padrão:
+
+```
+Componente.astro
+├── Frontmatter (---)
+│   ├── Imports
+│   └── Props com interface
+├── Template HTML
+│   ├── Estrutura semântica
+│   └── Slots para conteúdo
+├── Script (client-side JS)
+└── Style (CSS scoped)
+```
+
+## Exemplos de Uso
+
+### Button
+
+O componente Button aceita `variant`, `size` e `href`:
+
+<Tabs
+  tabs={[
+    { label: 'Visual', content: 'Três botões lado a lado: Primary (laranja), Secondary (cinza), Ghost (transparente).' },
+    { label: 'Código', content: '<Button variant="primary">Primary</Button>\n<Button variant="secondary">Secondary</Button>\n<Button variant="ghost">Ghost</Button>' },
+  ]}
+/>
+
+### Modal
+
+O Modal precisa de um `id` único e um slot `trigger`:
+
+<Tabs
+  tabs={[
+    { label: 'Visual', content: 'Um botão "Abrir" que abre um modal com título, conteúdo e botões de ação.' },
+    { label: 'Código', content: '<Modal id="exemplo" title="Título">\n  <p slot="trigger">Abrir</p>\n  <p>Conteúdo</p>\n</Modal>' },
+  ]}
+/>
+
+### Accordion
+
+Para listas de FAQ ou conteúdo colapsável:
+
+<Tabs
+  tabs={[
+    { label: 'Visual', content: 'Três itens colapsáveis: apenas um abre por vez no modo single.' },
+    { label: 'Código', content: '<Accordion\n  items={[\n    { title: "Pergunta", content: "Resposta" },\n  ]}\n/>' },
+  ]}
+/>
+
+<Callout variant="info">
+  Consulte a página de cada componente para documentação completa de propriedades e variantes.
+</Callout>

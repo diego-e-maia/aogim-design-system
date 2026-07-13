@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OBS Overlay - Música</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 1920px; height: 1080px;
+      background: transparent;
+      font-family: 'Inter', Arial, sans-serif;
+      overflow: hidden;
+    }
+    .lyrics-area {
+      position: absolute;
+      bottom: 120px; left: 100px; right: 100px;
+      text-align: center;
+    }
+    .lyrics-area p {
+      font-size: 44px;
+      font-weight: 600;
+      color: white;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+      line-height: 1.5;
+      margin-bottom: 8px;
+    }
+    .bottom-bar {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 60px;
+      background: linear-gradient(90deg, rgba(214,128,32,0.8), rgba(139,85,255,0.8));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .bottom-bar span {
+      font-size: 14px;
+      color: white;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+  <div class="lyrics-area">
+    <p>Exaltado seja o Senhor Deus</p>
+    <p>Pois a sua glória enche a terra</p>
+  </div>
+  <div class="bottom-bar">
+    <span>AOGIM — Adoração</span>
+  </div>
+</body>
+</html>

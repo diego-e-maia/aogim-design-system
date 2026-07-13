@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OBS Overlay - AOGIM</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 1920px; height: 1080px;
+      background: transparent;
+      font-family: 'Inter', Arial, sans-serif;
+      overflow: hidden;
+    }
+    .bottom-bar {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 80px;
+      background: linear-gradient(90deg, rgba(13,13,18,0.9), rgba(13,13,18,0.7));
+      backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      border-top: 2px solid rgba(214,128,32,0.3);
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-icon {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #d68020, #8b55ff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: bold;
+      color: white;
+    }
+    .logo-text {
+      font-size: 18px;
+      font-weight: 700;
+      color: white;
+    }
+    .info {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      color: #9fa0a9;
+      font-size: 14px;
+    }
+    .left-decoration {
+      position: absolute;
+      left: 0; top: 0; bottom: 80px;
+      width: 4px;
+      background: linear-gradient(180deg, #d68020, #8b55ff);
+    }
+  </style>
+</head>
+<body>
+  <div class="left-decoration"></div>
+  <div class="bottom-bar">
+    <div class="logo">
+      <div class="logo-icon">A</div>
+      <span class="logo-text">AOGIM</span>
+    </div>
+    <div class="info">
+      <span>Igreja AOGIM</span>
+      <span>•</span>
+      <span>Ao vivo</span>
+    </div>
+  </div>
+</body>
+</html>

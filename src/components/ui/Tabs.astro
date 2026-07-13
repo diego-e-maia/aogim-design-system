@@ -1,0 +1,86 @@
+---
+interface Tab {
+  label: string;
+  content: string;
+  icon?: string;
+}
+
+interface Props {
+  tabs: Tab[];
+  class?: string;
+}
+
+const { tabs, class: className = '' } = Astro.props;
+const tabsId = 'tabs-' + Math.random().toString(36).slice(2, 8);
+---
+
+<div id={tabsId} data-tabs class={className}>
+  <div
+    data-tabs-list
+    class="flex gap-1 p-1 rounded-xl bg-dark-100 dark:bg-dark-800 overflow-x-auto"
+    role="tablist"
+  >
+    {tabs.map((tab, i) => (
+      <button
+        data-tab-trigger
+        type="button"
+        role="tab"
+        aria-selected={i === 0 ? 'true' : 'false'}
+        class:list={[
+          'flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg whitespace-nowrap transition-all',
+          i === 0
+            ? 'bg-[rgb(var(--color-bg))] text-[rgb(var(--color-text))] shadow-sm'
+            : 'text-[rgb(var(--color-text-secondary))] hover:text-[rgb(var(--color-text))]',
+        ]}
+      >
+        {tab.label}
+      </button>
+    ))}
+  </div>
+  <div class="mt-4">
+    {tabs.map((tab, i) => (
+      <div
+        data-tab-panel
+        role="tabpanel"
+        class:list={['text-sm text-[rgb(var(--color-text-secondary))] leading-relaxed', i === 0 ? '' : 'hidden']}
+      >
+        {tab.content}
+      </div>
+    ))}
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('[data-tabs]').forEach((tabs) => {
+    const triggers = tabs.querySelectorAll('[data-tab-trigger]');
+    const panels = tabs.querySelectorAll('[data-tab-panel]');
+
+    triggers.forEach((trigger, i) => {
+      trigger.addEventListener('click', () => {
+        triggers.forEach((t) => {
+          t.setAttribute('aria-selected', 'false');
+          t.classList.remove('bg-[rgb(var(--color-bg))]', 'text-[rgb(var(--color-text))]', 'shadow-sm');
+          t.classList.add('text-[rgb(var(--color-text-secondary))]');
+        });
+        trigger.setAttribute('aria-selected', 'true');
+        trigger.classList.remove('text-[rgb(var(--color-text-secondary))]');
+        trigger.classList.add('bg-[rgb(var(--color-bg))]', 'text-[rgb(var(--color-text))]', 'shadow-sm');
+
+        panels.forEach((p) => p.classList.add('hidden'));
+        panels[i].classList.remove('hidden');
+      });
+
+      trigger.addEventListener('keydown', (e) => {
+        const idx = Array.from(triggers).indexOf(trigger);
+        let nextIdx;
+        if (e.key === 'ArrowRight') nextIdx = (idx + 1) % triggers.length;
+        else if (e.key === 'ArrowLeft') nextIdx = (idx - 1 + triggers.length) % triggers.length;
+        if (nextIdx !== undefined) {
+          e.preventDefault();
+          triggers[nextIdx].click();
+          triggers[nextIdx].focus();
+        }
+      });
+    });
+  });
+</script>

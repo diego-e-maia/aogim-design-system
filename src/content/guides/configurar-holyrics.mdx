@@ -1,0 +1,55 @@
+---
+title: Configurar Holyrics
+description: Como usar os templates AOGIM no Holyrics para projeção nos cultos.
+order: 4
+---
+
+import Card from '../../components/ui/Card.astro';
+import Callout from '../../components/ui/Callout.astro';
+
+Este guia explica como configurar os templates do design system no Holyrics.
+
+## Passo 1: Baixar os Templates
+
+Acesse a página de **Downloads** e baixe os arquivos:
+
+- `template-letra.html` — para letras de música
+- `template-avisos.html` — para avisos e informativos
+
+## Passo 2: Adicionar no Holyrics
+
+1. Abra o Holyrics
+2. Vá em **Configurações → Apresentação → Modelos**
+3. Clique em **Adicionar** e selecione o arquivo HTML baixado
+4. Ajuste a resolução para **1920x1080**
+
+## Passo 3: Personalizar
+
+Os templates usam HTML puro com CSS inline. Você pode editar:
+
+- **Cores:** altere os valores `background` e `color` no `<style>`
+- **Textos:** substitua o conteúdo dentro das tags `<p>` e `<h1>`
+- **Fonte:** a família Inter é carregada do Google Fonts
+
+## Estrutura do Template
+
+```html
+<body>
+  <div class="verse">
+    <p>Texto da música ou aviso</p>
+    <p class="highlight">Referência</p>
+  </div>
+</body>
+```
+
+A classe `.verse` centraliza o conteúdo vertical e horizontalmente.
+
+## Dicas
+
+- Sempre teste o template antes do culto
+- Mantenha uma cópia de backup dos arquivos originais
+- Use o template de letras para músicas e o de avisos para informativos
+
+<Callout>
+  Para resoluções diferentes de 1920x1080, ajuste o `width` e `height` no CSS do template.
+</Callout>

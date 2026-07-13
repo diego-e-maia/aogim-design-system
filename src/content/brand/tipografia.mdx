@@ -1,0 +1,89 @@
+---
+title: Tipografia
+description: Famílias tipográficas, escalas e hierarquia de texto para todos os meios.
+order: 3
+icon: type
+---
+
+import Card from '../../components/ui/Card.astro';
+import Callout from '../../components/ui/Callout.astro';
+
+## Famílias Tipográficas
+
+Utilizamos três famílias tipográficas principais, cada uma com seu propósito específico.
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
+  <Card class="p-6">
+    <p class="text-xs font-medium text-[rgb(var(--color-text-secondary))] mb-2">Display</p>
+    <p class="text-3xl font-bold" style="font-family: 'Inter', sans-serif">Cal Sans</p>
+    <p class="text-sm text-[rgb(var(--color-text-secondary))] mt-2">Títulos e headlines</p>
+  </Card>
+  <Card class="p-6">
+    <p class="text-xs font-medium text-[rgb(var(--color-text-secondary))] mb-2">Sans-serif</p>
+    <p class="text-3xl font-medium" style="font-family: 'Inter', sans-serif">Inter</p>
+    <p class="text-sm text-[rgb(var(--color-text-secondary))] mt-2">Textos e interface</p>
+  </Card>
+  <Card class="p-6">
+    <p class="text-xs font-medium text-[rgb(var(--color-text-secondary))] mb-2">Mono</p>
+    <p class="text-3xl" style="font-family: 'JetBrains Mono', monospace">JetBrains Mono</p>
+    <p class="text-sm text-[rgb(var(--color-text-secondary))] mt-2">Código e dados</p>
+  </Card>
+</div>
+
+## Escala Tipográfica
+
+<div class="space-y-3 my-8">
+  <div class="flex items-baseline gap-4 p-4 rounded-xl bg-dark-100 dark:bg-dark-800">
+    <span class="text-xs font-mono text-[rgb(var(--color-text-secondary))] w-16">6xl</span>
+    <span class="text-6xl font-bold">3.75rem</span>
+  </div>
+  <div class="flex items-baseline gap-4 p-4 rounded-xl bg-dark-100 dark:bg-dark-800">
+    <span class="text-xs font-mono text-[rgb(var(--color-text-secondary))] w-16">5xl</span>
+    <span class="text-5xl font-bold">3rem</span>
+  </div>
+  <div class="flex items-baseline gap-4 p-4 rounded-xl bg-dark-100 dark:bg-dark-800">
+    <span class="text-xs font-mono text-[rgb(var(--color-text-secondary))] w-16">4xl</span>
+    <span class="text-4xl font-bold">2.25rem</span>
+  </div>
+  <div class="flex items-baseline gap-4 p-4 rounded-xl bg-dark-100 dark:bg-dark-800">
+    <span class="text-xs font-mono text-[rgb(var(--color-text-secondary))] w-16">3xl</span>
+    <span class="text-3xl font-bold">1.875rem</span>
+  </div>
+  <div class="flex items-baseline gap-4 p-4 rounded-xl bg-dark-100 dark:bg-dark-800">
+    <span class="text-xs font-mono text-[rgb(var(--color-text-secondary))] w-16">2xl</span>
+    <span class="text-2xl font-bold">1.5rem</span>
+  </div>
+  <div class="flex items-baseline gap-4 p-4 rounded-xl bg-dark-100 dark:bg-dark-800">
+    <span class="text-xs font-mono text-[rgb(var(--color-text-secondary))] w-16">xl</span>
+    <span class="text-xl">1.25rem</span>
+  </div>
+  <div class="flex items-baseline gap-4 p-4 rounded-xl bg-dark-100 dark:bg-dark-800">
+    <span class="text-xs font-mono text-[rgb(var(--color-text-secondary))] w-16">base</span>
+    <span>1rem</span>
+  </div>
+</div>
+
+## Hierarquia de Títulos
+
+<div class="space-y-6 my-8">
+  <div>
+    <p class="text-xs font-mono text-[rgb(var(--color-text-secondary))] mb-1">h1</p>
+    <h1 class="text-5xl font-bold tracking-tight">Título Principal</h1>
+  </div>
+  <div>
+    <p class="text-xs font-mono text-[rgb(var(--color-text-secondary))] mb-1">h2</p>
+    <h2 class="text-3xl font-semibold tracking-tight">Título Secundário</h2>
+  </div>
+  <div>
+    <p class="text-xs font-mono text-[rgb(var(--color-text-secondary))] mb-1">h3</p>
+    <h3 class="text-2xl font-semibold">Título Terciário</h3>
+  </div>
+  <div>
+    <p class="text-xs font-mono text-[rgb(var(--color-text-secondary))] mb-1">body</p>
+    <p class="text-lg leading-relaxed">Texto corpo com espaçamento confortável para leitura em telas e materiais impressos.</p>
+  </div>
+</div>
+
+<Callout>
+  Use font-size e font-weight consistentes para manter a hierarquia visual. Evite misturar estilos sem necessidade.
+</Callout>

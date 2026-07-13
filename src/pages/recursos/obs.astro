@@ -1,0 +1,41 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Section from '../../components/ui/Section.astro';
+import Card from '../../components/ui/Card.astro';
+import Callout from '../../components/ui/Callout.astro';
+---
+
+<MainLayout title="OBS Studio | AOGIM Design System" description="Overlays, cenas e configurações para transmissão ao vivo com a identidade visual AOGIM no OBS Studio.">
+  <Section title="OBS Studio" description="Overlays, cenas e configurações para transmissão ao vivo.">
+    <div class="space-y-6">
+      <p class="text-[rgb(var(--color-text-secondary))]">Configurações profissionais para transmissão dos cultos com a identidade visual AOGIM.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <Card class="p-6">
+          <h3 class="font-semibold mb-2">Overlay Principal</h3>
+          <p class="text-sm text-[rgb(var(--color-text-secondary))] mb-3">Overlay com barras laterais e posição para câmera.</p>
+          <span class="text-xs text-brand-500 font-medium">1920x1080</span>
+        </Card>
+        <Card class="p-6">
+          <h3 class="font-semibold mb-2">Overlay de Música</h3>
+          <p class="text-sm text-[rgb(var(--color-text-secondary))] mb-3">Overlay otimizado para exibição de letras.</p>
+          <span class="text-xs text-brand-500 font-medium">1920x1080</span>
+        </Card>
+        <Card class="p-6">
+          <h3 class="font-semibold mb-2">Tela de Fundo</h3>
+          <p class="text-sm text-[rgb(var(--color-text-secondary))] mb-3">Background animado com gradiente da marca.</p>
+          <span class="text-xs text-brand-500 font-medium">1920x1080</span>
+        </Card>
+        <Card class="p-6">
+          <h3 class="font-semibold mb-2">Cena de Transição</h3>
+          <p class="text-sm text-[rgb(var(--color-text-secondary))] mb-3">Tela de transição entre momentos do culto.</p>
+          <span class="text-xs text-brand-500 font-medium">1920x1080</span>
+        </Card>
+      </div>
+
+      <Callout>
+        Os arquivos de cena OBS (.json) estarão disponíveis na seção Downloads.
+      </Callout>
+    </div>
+  </Section>
+</MainLayout>

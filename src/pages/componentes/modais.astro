@@ -1,0 +1,69 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Section from '../../components/ui/Section.astro';
+import Modal from '../../components/ui/Modal.astro';
+import CodeBlock from '../../components/ui/CodeBlock.astro';
+import Card from '../../components/ui/Card.astro';
+---
+
+<MainLayout title="Modal | AOGIM Design System" description="Diálogo modal com overlay, animação de entrada, suporte a teclado (Escape) e foco gerenciado.">
+  <Section title="Modal" description="Diálogo com overlay, animação e suporte a teclado.">
+    <div class="space-y-8">
+      <div class="flex gap-4">
+        <Modal id="modal-example-1" title="Exemplo de Modal">
+          <p slot="trigger">Abrir Modal</p>
+          <p class="text-[rgb(var(--color-text-secondary))]">Este é um modal funcional. Clique fora, no botão Cancelar ou pressione Escape para fechar.</p>
+        </Modal>
+        <Modal id="modal-example-2" title="Sem Footer">
+          <p slot="trigger">Sem Footer</p>
+          <p class="text-[rgb(var(--color-text-secondary))]">Este modal não exibe o rodapé com botões. O título é opcional também.</p>
+        </Modal>
+      </div>
+
+      <CodeBlock code={`<Modal id="meu-modal" title="Título">
+  <p slot="trigger">Abrir Modal</p>
+  <p>Conteúdo do modal aqui.</p>
+</Modal>`} language="astro" filename="Modal.astro" />
+
+      <Card class="p-6">
+        <h4 class="font-semibold mb-3">Propriedades</h4>
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-[rgb(var(--color-border))]">
+              <th class="text-left p-2">Prop</th>
+              <th class="text-left p-2">Tipo</th>
+              <th class="text-left p-2">Default</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-[rgb(var(--color-border))]">
+              <td class="p-2 font-mono">id</td>
+              <td class="p-2">string</td>
+              <td class="p-2">—</td>
+            </tr>
+            <tr class="border-b border-[rgb(var(--color-border))]">
+              <td class="p-2 font-mono">title</td>
+              <td class="p-2">string (opcional)</td>
+              <td class="p-2">—</td>
+            </tr>
+            <tr>
+              <td class="p-2 font-mono">trigger</td>
+              <td class="p-2">slot</td>
+              <td class="p-2">—</td>
+            </tr>
+          </tbody>
+        </table>
+      </Card>
+
+      <Card class="p-6">
+        <h4 class="font-semibold mb-3">Comportamento</h4>
+        <ul class="space-y-2 text-sm text-[rgb(var(--color-text-secondary))]">
+          <li>• Fecha ao clicar no overlay (backdrop)</li>
+          <li>• Fecha ao pressionar Escape</li>
+          <li>• Animação de entrada com scale + fade</li>
+          <li>• Trava o scroll do body enquanto aberto</li>
+        </ul>
+      </Card>
+    </div>
+  </Section>
+</MainLayout>

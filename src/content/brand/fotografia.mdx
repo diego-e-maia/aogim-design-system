@@ -1,0 +1,61 @@
+---
+title: Fotografia
+description: Diretrizes de uso de imagens, estilo fotográfico e banco de imagens.
+order: 4
+icon: image
+---
+
+import Card from '../../components/ui/Card.astro';
+import Callout from '../../components/ui/Callout.astro';
+
+Nossa fotografia deve transmitir autenticidade, calor humano e espiritualidade. Preferimos imagens reais da comunidade a bancos de imagens genéricos.
+
+## Estilo Fotográfico
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-8">
+  <Card class="p-6">
+    <div class="h-40 rounded-lg mb-3 bg-gradient-to-br from-brand-500/20 to-brand-500/5 flex items-center justify-center">
+      <span class="text-5xl">🙏</span>
+    </div>
+    <h4 class="font-semibold mb-1">Momentos Reais</h4>
+    <p class="text-sm text-[rgb(var(--color-text-secondary))]">Fotografias autênticas dos cultos e eventos da comunidade.</p>
+  </Card>
+  <Card class="p-6">
+    <div class="h-40 rounded-lg mb-3 bg-gradient-to-br from-sacred-500/20 to-sacred-500/5 flex items-center justify-center">
+      <span class="text-5xl">🤝</span>
+    </div>
+    <h4 class="font-semibold mb-1">Conexão Humana</h4>
+    <p class="text-sm text-[rgb(var(--color-text-secondary))]">Pessoas em interação, abraços, momentos de comunhão.</p>
+  </Card>
+  <Card class="p-6">
+    <div class="h-40 rounded-lg mb-3 bg-gradient-to-br from-yellow-500/20 to-yellow-500/5 flex items-center justify-center">
+      <span class="text-5xl">🌅</span>
+    </div>
+    <h4 class="font-semibold mb-1">Luz Natural</h4>
+    <p class="text-sm text-[rgb(var(--color-text-secondary))]">Iluminação natural e calorosa, evitando flash direto.</p>
+  </Card>
+</div>
+
+## Diretrizes Técnicas
+
+- **Resolução mínima:** 1920x1080px para uso em tela
+- **Formato:** JPEG qualidade 90% ou PNG para imagens com transparência
+- **Proporção:** 16:9 para widescreen, 4:3 para impressos
+- **Cor:** Perfil sRGB
+
+## Tratamento de Imagem
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+  <Card class="p-6">
+    <h4 class="font-semibold mb-2">Tons Quentes</h4>
+    <p class="text-sm text-[rgb(var(--color-text-secondary))]">Ajuste sutil de temperatura para tons mais quentes, alinhados ao laranja da marca.</p>
+  </Card>
+  <Card class="p-6">
+    <h4 class="font-semibold mb-2">Contraste Moderado</h4>
+    <p class="text-sm text-[rgb(var(--color-text-secondary))]">Controle de contraste para manter detalhes em sombras e realces sem perder informação.</p>
+  </Card>
+</div>
+
+<Callout variant="warning">
+  Evite usar imagens com direitos autorais restritos. Priorize fotos da própria comunidade ou bancos de imagens gratuitos com licença comercial (Unsplash, Pexels).
+</Callout>

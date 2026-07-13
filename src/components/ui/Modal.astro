@@ -1,0 +1,128 @@
+---
+interface Props {
+  id: string;
+  title?: string;
+}
+
+const { id, title } = Astro.props;
+---
+
+<button
+  data-modal-trigger={id}
+  type="button"
+  class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-xl bg-brand-500 text-white hover:bg-brand-600 transition-colors"
+>
+  <slot name="trigger" />
+</button>
+
+<div
+  id={id}
+  data-modal
+  class="fixed inset-0 z-[100] hidden"
+  role="dialog"
+  aria-modal="true"
+  aria-label={title}
+>
+  <div data-modal-overlay class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+  <div class="absolute inset-0 flex items-center justify-center p-4">
+    <div class="relative w-full max-w-lg rounded-2xl border border-[rgb(var(--color-border))] bg-[rgb(var(--color-bg))] shadow-2xl animate-modal-in">
+      {title && (
+        <div class="flex items-center justify-between px-6 py-4 border-b border-[rgb(var(--color-border))]">
+          <h3 class="text-lg font-semibold">{title}</h3>
+          <button
+            data-modal-close={id}
+            type="button"
+            class="p-2 rounded-lg hover:bg-dark-100 dark:hover:bg-dark-800 transition-colors"
+            aria-label="Fechar"
+          >
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      )}
+      <div class="px-6 py-4">
+        <slot />
+      </div>
+      <div class="flex justify-end gap-3 px-6 py-4 border-t border-[rgb(var(--color-border))]">
+        <button
+          data-modal-close={id}
+          type="button"
+          class="px-4 py-2 text-sm font-medium rounded-xl text-[rgb(var(--color-text-secondary))] hover:bg-dark-100 dark:hover:bg-dark-800 transition-colors"
+        >
+          Cancelar
+        </button>
+        <button
+          type="button"
+          class="px-4 py-2 text-sm font-medium rounded-xl bg-brand-500 text-white hover:bg-brand-600 transition-colors"
+        >
+          Confirmar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  class ModalManager {
+    constructor() {
+      this.init();
+    }
+
+    init() {
+      document.addEventListener('click', (e) => {
+        const trigger = e.target.closest('[data-modal-trigger]');
+        if (trigger) {
+          const id = trigger.getAttribute('data-modal-trigger');
+          this.open(id);
+        }
+
+        const closeBtn = e.target.closest('[data-modal-close]');
+        if (closeBtn) {
+          const id = closeBtn.getAttribute('data-modal-close');
+          this.close(id);
+        }
+
+        const overlay = e.target.closest('[data-modal-overlay]');
+        if (overlay) {
+          const modal = overlay.closest('[data-modal]');
+          if (modal) this.close(modal.id);
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          document.querySelectorAll('[data-modal]:not(.hidden)').forEach((el) => {
+            this.close(el.id);
+          });
+        }
+      });
+    }
+
+    open(id) {
+      const modal = document.getElementById(id);
+      if (!modal) return;
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    close(id) {
+      const modal = document.getElementById(id);
+      if (!modal) return;
+      modal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+  }
+
+  new ModalManager();
+</script>
+
+<style>
+  @keyframes modal-in {
+    from { opacity: 0; transform: scale(0.95) translateY(10px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+  }
+  .animate-modal-in {
+    animation: modal-in 0.2s ease-out;
+  }
+</style>

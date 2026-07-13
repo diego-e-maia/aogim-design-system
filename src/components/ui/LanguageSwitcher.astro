@@ -1,0 +1,38 @@
+---
+interface Props {
+  locale?: string;
+}
+
+const { locale = 'pt' } = Astro.props;
+
+const languages = [
+  { code: 'pt', label: 'PT' },
+  { code: 'en', label: 'EN' },
+  { code: 'es', label: 'ES' },
+];
+---
+
+<div class="flex items-center gap-1">
+  {languages.map((lang) => (
+    <a
+      href={Astro.url.pathname}
+      data-lang={lang.code}
+      class:list={[
+        'px-2 py-1 rounded text-xs font-medium transition-colors',
+        locale === lang.code
+          ? 'bg-brand-500/10 text-brand-500'
+          : 'text-[rgb(var(--color-text-secondary))] hover:bg-dark-100 dark:hover:bg-dark-800',
+      ]}
+      aria-label={`Switch to ${lang.label}`}
+      onclick="
+        event.preventDefault();
+        localStorage.setItem('locale', this.dataset.lang);
+        window.dispatchEvent(new CustomEvent('locale-change', { detail: this.dataset.lang }));
+        document.querySelectorAll('[data-lang]').forEach(el => el.classList.remove('bg-brand-500/10', 'text-brand-500'));
+        this.classList.add('bg-brand-500/10', 'text-brand-500');
+      "
+    >
+      {lang.label}
+    </a>
+  ))}
+</div>

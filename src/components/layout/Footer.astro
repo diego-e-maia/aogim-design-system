@@ -1,0 +1,82 @@
+---
+import { getTranslations } from '../../i18n/index';
+
+interface Props {
+  locale?: string;
+}
+
+const { locale = 'pt' } = Astro.props;
+const t = getTranslations(locale);
+const f = t.footer;
+const copyright = locale === 'pt' ? 'Todos os direitos reservados.' : locale === 'es' ? 'Todos los derechos reservados.' : 'All rights reserved.';
+---
+
+<footer class="border-t border-[rgb(var(--color-border))] bg-[rgb(var(--color-bg-secondary))]" transition:name="footer">
+  <div class="max-w-7xl mx-auto px-6 py-12">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+      <div>
+        <h4 class="font-semibold mb-4 text-sm">{f.product.title}</h4>
+        <ul class="space-y-2">
+          {f.product.items.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class="text-sm text-[rgb(var(--color-text-secondary))] hover:text-[rgb(var(--color-text))] transition-colors"
+              >
+                {item.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-4 text-sm">{f.resources.title}</h4>
+        <ul class="space-y-2">
+          {f.resources.items.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class="text-sm text-[rgb(var(--color-text-secondary))] hover:text-[rgb(var(--color-text))] transition-colors"
+              >
+                {item.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-4 text-sm">{f.community.title}</h4>
+        <ul class="space-y-2">
+          {f.community.items.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class="text-sm text-[rgb(var(--color-text-secondary))] hover:text-[rgb(var(--color-text))] transition-colors"
+              >
+                {item.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-4 text-sm">{f.company.title}</h4>
+        <ul class="space-y-2">
+          {f.company.items.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class="text-sm text-[rgb(var(--color-text-secondary))] hover:text-[rgb(var(--color-text))] transition-colors"
+              >
+                {item.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+    <div class="mt-12 pt-8 border-t border-[rgb(var(--color-border))] text-center text-sm text-[rgb(var(--color-text-secondary))]">
+      <p>&copy; {new Date().getFullYear()} AOGIM. {copyright}</p>
+    </div>
+  </div>
+</footer>

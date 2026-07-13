@@ -1,0 +1,142 @@
+---
+import { getTranslations } from '../../i18n/index';
+
+interface Props {
+  locale?: string;
+}
+
+const { locale = 'pt' } = Astro.props;
+const t = getTranslations(locale);
+---
+
+<div id="search-overlay" class="fixed inset-0 z-[100] hidden">
+  <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+  <div class="absolute inset-x-0 top-0 sm:top-[15%] max-w-xl mx-auto p-4">
+    <div class="rounded-2xl border border-[rgb(var(--color-border))] bg-[rgb(var(--color-bg))] shadow-2xl overflow-hidden">
+      <div class="flex items-center gap-3 px-4 border-b border-[rgb(var(--color-border))]">
+        <svg class="w-5 h-5 text-[rgb(var(--color-text-secondary))] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+        <input
+          id="search-input"
+          type="text"
+          placeholder={t.search}
+          autocomplete="off"
+          class="flex-1 py-4 bg-transparent text-sm focus:outline-none placeholder-[rgb(var(--color-text-secondary))]"
+        />
+        <kbd class="hidden sm:inline-flex items-center px-2 py-0.5 rounded text-xs font-mono border border-[rgb(var(--color-border))] text-[rgb(var(--color-text-secondary))]">
+          ESC
+        </kbd>
+      </div>
+      <div id="search-results" class="max-h-80 overflow-y-auto p-2 scrollbar-thin">
+        <p class="p-4 text-center text-sm text-[rgb(var(--color-text-secondary))]">
+          Digite para pesquisar...
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  (async () => {
+    const overlay = document.getElementById('search-overlay');
+    const input = document.getElementById('search-input');
+    const results = document.getElementById('search-results');
+
+    const res = await fetch('/search-index.json');
+    const pages = await res.json();
+
+    const Fuse = (await import('fuse.js')).default;
+    const fuse = new Fuse(pages, {
+      keys: ['title', 'description'],
+      threshold: 0.4,
+      includeScore: true,
+    });
+
+    function open() {
+      overlay.classList.remove('hidden');
+      input.value = '';
+      results.innerHTML = '<p class="p-4 text-center text-sm text-[rgb(var(--color-text-secondary))]">Digite para pesquisar...</p>';
+      input.focus();
+      document.body.style.overflow = 'hidden';
+    }
+
+    function close() {
+      overlay.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    function search(query) {
+      if (!query.trim()) {
+        results.innerHTML = '<p class="p-4 text-center text-sm text-[rgb(var(--color-text-secondary))]">Digite para pesquisar...</p>';
+        return;
+      }
+      const matches = fuse.search(query).slice(0, 8);
+      if (matches.length === 0) {
+        results.innerHTML = '<p class="p-4 text-center text-sm text-[rgb(var(--color-text-secondary))]">Nenhum resultado encontrado.</p>';
+        return;
+      }
+      results.innerHTML = matches.map((match, i) => {
+        const item = match.item;
+        return `<a href="${item.href}" class="search-result flex items-start gap-3 p-3 rounded-xl hover:bg-dark-100 dark:hover:bg-dark-800 transition-colors ${i === 0 ? 'search-selected' : ''}" tabindex="0">
+          <div class="flex-1 min-w-0">
+            <p class="text-sm font-medium truncate">${item.title}</p>
+            <p class="text-xs text-[rgb(var(--color-text-secondary))] truncate">${item.description}</p>
+          </div>
+          <span class="text-xs text-[rgb(var(--color-text-secondary))]">${item.href}</span>
+        </a>`;
+      }).join('');
+    }
+
+    input.addEventListener('input', (e) => search(e.target.value));
+
+    input.addEventListener('keydown', (e) => {
+      const items = results.querySelectorAll('.search-result');
+      const selected = results.querySelector('.search-selected');
+      let idx = Array.from(items).indexOf(selected);
+
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        if (idx < items.length - 1) idx++;
+        items.forEach((el, i) => el.classList.toggle('search-selected', i === idx));
+        items[idx]?.scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        if (idx > 0) idx--;
+        items.forEach((el, i) => el.classList.toggle('search-selected', i === idx));
+        items[idx]?.scrollIntoView({ block: 'nearest' });
+      } else if (e.key === 'Enter') {
+        e.preventDefault();
+        if (selected) window.location.href = selected.getAttribute('href');
+      }
+    });
+
+    results.addEventListener('click', (e) => {
+      const link = e.target.closest('.search-result');
+      if (link) window.location.href = link.getAttribute('href');
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        overlay.classList.contains('hidden') ? open() : close();
+      }
+      if (e.key === 'Escape') close();
+    });
+
+    overlay.querySelector('.absolute.inset-0')?.addEventListener('click', close);
+
+    document.querySelectorAll('[data-toggle-search]').forEach((btn) => {
+      btn.addEventListener('click', open);
+    });
+  })();
+</script>
+
+<style>
+  .search-selected {
+    background-color: rgb(var(--color-bg-secondary));
+  }
+  .dark .search-selected {
+    background-color: rgb(39 39 47);
+  }
+</style>

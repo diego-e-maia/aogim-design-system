@@ -1,0 +1,17 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#1a1a23"/>
+  <rect x="0" y="0" width="1200" height="630" fill="url(#gradient)" opacity="0.15"/>
+  <defs>
+    <linearGradient id="gradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#d68020"/>
+      <stop offset="100%" stop-color="#8b55ff"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(600, 280)">
+    <rect x="-45" y="-45" width="90" height="90" rx="18" fill="url(#gradient)"/>
+    <text x="0" y="18" font-family="Inter, sans-serif" font-size="52" font-weight="700" fill="white" text-anchor="middle">A</text>
+  </g>
+  <text x="600" y="380" font-family="Inter, sans-serif" font-size="52" font-weight="700" fill="white" text-anchor="middle" letter-spacing="4">AOGIM</text>
+  <text x="600" y="420" font-family="Inter, sans-serif" font-size="22" fill="#a0a0b0" text-anchor="middle" letter-spacing="2">DESIGN SYSTEM</text>
+  <text x="600" y="470" font-family="Inter, sans-serif" font-size="16" fill="#606070" text-anchor="middle">Uma Igreja. Uma Família. Um Lugar de Transformação.</text>
+</svg>

@@ -1,0 +1,72 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Section from '../../components/ui/Section.astro';
+import Card from '../../components/ui/Card.astro';
+import Button from '../../components/ui/Button.astro';
+
+---
+
+<MainLayout title="Componentes | AOGIM Design System" description="Elementos reutilizáveis para construir interfaces consistentes — botões, cards, callouts, badges, formulários, modais, accordion, tabs e tooltip.">
+  <Section title="Componentes" description="Elementos reutilizáveis para construir interfaces consistentes.">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <Card class="p-6 hover:border-brand-500/50 transition-colors">
+        <a href="/componentes/botoes">
+          <h3 class="font-semibold mb-2">Botões</h3>
+          <p class="text-sm text-[rgb(var(--color-text-secondary))] mb-4">Primary, secondary, ghost e danger em 3 tamanhos.</p>
+          <div class="flex gap-2">
+            <Button size="sm">Primary</Button>
+            <Button variant="secondary" size="sm">Secondary</Button>
+          </div>
+        </a>
+      </Card>
+      <Card class="p-6 hover:border-brand-500/50 transition-colors">
+        <a href="/componentes/cards">
+          <h3 class="font-semibold mb-2">Cards</h3>
+          <p class="text-sm text-[rgb(var(--color-text-secondary))]">Containers versáteis para agrupar conteúdo com estilo consistente.</p>
+        </a>
+      </Card>
+      <Card class="p-6 hover:border-brand-500/50 transition-colors">
+        <a href="/componentes/callouts">
+          <h3 class="font-semibold mb-2">Callouts</h3>
+          <p class="text-sm text-[rgb(var(--color-text-secondary))]">Alertas e notificações com variantes info, warning, danger e success.</p>
+        </a>
+      </Card>
+      <Card class="p-6 hover:border-brand-500/50 transition-colors">
+        <a href="/componentes/badges">
+          <h3 class="font-semibold mb-2">Badges</h3>
+          <p class="text-sm text-[rgb(var(--color-text-secondary))]">Tags e indicadores de status em múltiplas cores.</p>
+        </a>
+      </Card>
+      <Card class="p-6 hover:border-brand-500/50 transition-colors">
+        <a href="/componentes/formularios">
+          <h3 class="font-semibold mb-2">Formulários</h3>
+          <p class="text-sm text-[rgb(var(--color-text-secondary))]">Inputs, selects e elementos de formulário padronizados.</p>
+        </a>
+      </Card>
+      <Card class="p-6 hover:border-brand-500/50 transition-colors">
+        <a href="/componentes/modais">
+          <h3 class="font-semibold mb-2">Modais</h3>
+          <p class="text-sm text-[rgb(var(--color-text-secondary))]">Diálogos e janelas modais para interações focadas.</p>
+        </a>
+      </Card>
+      <Card class="p-6 hover:border-brand-500/50 transition-colors">
+        <a href="/componentes/accordion">
+          <h3 class="font-semibold mb-2">Accordion</h3>
+          <p class="text-sm text-[rgb(var(--color-text-secondary))]">Seções colapsáveis com animação suave.</p>
+        </a>
+      </Card>
+      <Card class="p-6 hover:border-brand-500/50 transition-colors">
+        <a href="/componentes/tabs">
+          <h3 class="font-semibold mb-2">Tabs</h3>
+          <p class="text-sm text-[rgb(var(--color-text-secondary))]">Navegação por abas com suporte a teclado.</p>
+        </a>
+      </Card>
+      <Card class="p-6 hover:border-brand-500/50 transition-colors">
+        <a href="/componentes/tooltip">
+          <h3 class="font-semibold mb-2">Tooltip</h3>
+          <p class="text-sm text-[rgb(var(--color-text-secondary))]">Dicas contextuais ao passar o mouse.</p>
+        </a>
+      </Card>
+    </div>
+  </Section>
+</MainLayout>

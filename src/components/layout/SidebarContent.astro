@@ -1,0 +1,41 @@
+---
+import { getTranslations } from '../../i18n/index';
+
+interface Props {
+  locale?: string;
+}
+
+const { locale = 'pt' } = Astro.props;
+const t = getTranslations(locale);
+const currentPath = Astro.url.pathname;
+---
+
+<nav class="p-4 space-y-6">
+  {t.nav.map((section) => (
+    <div>
+      <h3 class="px-3 mb-2 text-xs font-semibold uppercase tracking-wider text-[rgb(var(--color-text-secondary))]">
+        {section.title}
+      </h3>
+      <ul class="space-y-1">
+        {section.items.map((item) => {
+          const isActive = currentPath === item.href || currentPath.startsWith(item.href + '/');
+          return (
+            <li>
+              <a
+                href={item.href}
+                class:list={[
+                  'block px-3 py-2 rounded-lg text-sm transition-colors',
+                  isActive
+                    ? 'bg-brand-500/10 text-brand-500 font-medium'
+                    : 'text-[rgb(var(--color-text-secondary))] hover:bg-dark-100 dark:hover:bg-dark-800 hover:text-[rgb(var(--color-text))]',
+                ]}
+              >
+                {item.title}
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  ))}
+</nav>
