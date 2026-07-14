@@ -4,6 +4,7 @@ import SEO from '../components/ui/SEO.astro';
 import Header from '../components/layout/Header.astro';
 import Sidebar from '../components/layout/Sidebar.astro';
 import Footer from '../components/layout/Footer.astro';
+import BackToTop from '../components/ui/BackToTop.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -67,6 +68,7 @@ const pageTitle = title.includes('AOGIM Design System')
       </main>
     </div>
     <Footer locale={locale} />
+    <BackToTop />
     <script>
       document.addEventListener('astro:page-load', () => {
         requestAnimationFrame(() => {

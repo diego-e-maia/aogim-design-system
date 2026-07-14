@@ -1,0 +1,25 @@
+---
+interface Props {
+  title: string;
+  code: string;
+}
+
+const { title, code } = Astro.props;
+---
+
+<section class="my-8">
+  <h3 class="text-lg font-semibold mb-3">{title}</h3>
+  <div class="rounded-xl border border-[rgb(var(--color-border))] overflow-hidden">
+    <div class="p-6 bg-[rgb(var(--color-card-bg))] flex flex-wrap gap-4 items-center">
+      <slot name="demo" />
+    </div>
+    <details class="border-t border-[rgb(var(--color-border))]">
+      <summary class="px-6 py-3 text-sm font-medium cursor-pointer hover:bg-dark-100 dark:hover:bg-dark-800 transition-colors">
+        Ver código
+      </summary>
+      <div class="p-4 bg-[#0d1117] overflow-x-auto">
+        <pre class="text-sm"><code>{code}</code></pre>
+      </div>
+    </details>
+  </div>
+</section>

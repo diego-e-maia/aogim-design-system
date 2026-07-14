@@ -1,0 +1,86 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Section from '../components/ui/Section.astro';
+import Card from '../components/ui/Card.astro';
+
+const versions = [
+  {
+    version: '1.2.0',
+    date: 'Julho 2026',
+    changes: [
+      { type: 'feature', text: 'Páginas em inglês e espanhol (EN/ES)' },
+      { type: 'feature', text: 'Página 404 com detecção de idioma' },
+      { type: 'feature', text: 'Service Worker com cache offline' },
+      { type: 'feature', text: 'Tags hreflang para SEO multilíngue' },
+      { type: 'feature', text: 'JSON-LD com schema WebSite + Organization' },
+      { type: 'feature', text: 'GitHub Actions para deploy automático' },
+      { type: 'improvement', text: 'Performance: prefetch, CSS minify, font-loading não-bloqueante' },
+      { type: 'improvement', text: 'Sidebar responsiva com menu mobile' },
+      { type: 'feature', text: 'Visualizador de Design Tokens' },
+      { type: 'feature', text: 'Badges de status (stable/beta/deprecated) nos componentes' },
+      { type: 'feature', text: 'Copy-to-clipboard nos blocos de código' },
+      { type: 'feature', text: 'Botão Back to Top' },
+    ],
+  },
+  {
+    version: '1.1.0',
+    date: 'Junho 2026',
+    changes: [
+      { type: 'feature', text: 'Componentes: Accordion, Tabs, Tooltip, Modais' },
+      { type: 'feature', text: 'Pesquisa com Fuse.js e índice JSON estático' },
+      { type: 'improvement', text: 'Dark mode como padrão com toggle sem flash' },
+      { type: 'improvement', text: 'Scroll-reveal animado nas seções' },
+    ],
+  },
+  {
+    version: '1.0.0',
+    date: 'Maio 2026',
+    changes: [
+      { type: 'feature', text: 'Lançamento do AOGIM Design System' },
+      { type: 'feature', text: 'Fundamentos: marca, cores, tipografia, fotografia, espaçamentos, ícones' },
+      { type: 'feature', text: 'Componentes: Botões, Cards, Callouts, Badges, Formulários' },
+      { type: 'feature', text: 'Templates: páginas, posts, eventos' },
+      { type: 'feature', text: 'Guias: primeiros passos, componentes, marca, Holyrics, OBS' },
+      { type: 'feature', text: 'Recursos: Holyrics, OBS, biblioteca, downloads' },
+      { type: 'feature', text: 'Site estático com Astro + Tailwind + MDX' },
+      { type: 'feature', text: 'i18n PT-BR' },
+    ],
+  },
+];
+---
+
+<MainLayout title="Changelog | AOGIM Design System" description="Histórico de atualizações do AOGIM Design System.">
+  <Section title="Changelog" description="Histórico de versões e atualizações.">
+    <div class="space-y-8">
+      {versions.map((v) => (
+        <Card class="p-6">
+          <div class="flex items-baseline gap-4 mb-4">
+            <h3 class="text-xl font-bold">v{v.version}</h3>
+            <span class="text-sm text-[rgb(var(--color-text-secondary))]">{v.date}</span>
+          </div>
+          <ul class="space-y-2">
+            {v.changes.map((c) => (
+              <li class="flex items-start gap-3 text-sm">
+                {c.type === 'feature' && (
+                  <span class="mt-0.5 w-5 h-5 rounded-full bg-green-500/10 text-green-400 flex items-center justify-center shrink-0">
+                    <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                    </svg>
+                  </span>
+                )}
+                {c.type === 'improvement' && (
+                  <span class="mt-0.5 w-5 h-5 rounded-full bg-brand-500/10 text-brand-500 flex items-center justify-center shrink-0">
+                    <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                    </svg>
+                  </span>
+                )}
+                <span>{c.text}</span>
+              </li>
+            ))}
+          </ul>
+        </Card>
+      ))}
+    </div>
+  </Section>
+</MainLayout>

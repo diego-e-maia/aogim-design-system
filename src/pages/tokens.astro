@@ -1,0 +1,86 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Section from '../components/ui/Section.astro';
+import TokenCard from '../components/ui/TokenCard.astro';
+
+const tokens = {
+  colors: [
+    { name: '--color-primary', value: '#d68020', desc: 'Laranja da marca' },
+    { name: '--color-secondary', value: '#8b55ff', desc: 'Roxo espiritual' },
+    { name: '--color-bg', value: '#ffffff / #0d0d12', desc: 'Fundo (light/dark)' },
+    { name: '--color-text', value: '#1a1a21 / #f6f6f7', desc: 'Texto (light/dark)' },
+  ],
+  typography: [
+    { name: '--font-sans', value: 'Inter, system-ui, sans-serif', desc: 'Fonte principal' },
+    { name: '--font-display', value: 'Cal Sans, Inter, sans-serif', desc: 'Fonte de destaque' },
+    { name: '--font-mono', value: 'JetBrains Mono, Fira Code, monospace', desc: 'Fonte monoespaçada' },
+  ],
+  spacing: [
+    { name: '--space-1', value: '0.25rem', desc: '4px' },
+    { name: '--space-2', value: '0.5rem', desc: '8px' },
+    { name: '--space-3', value: '0.75rem', desc: '12px' },
+    { name: '--space-4', value: '1rem', desc: '16px' },
+    { name: '--space-5', value: '1.25rem', desc: '20px' },
+    { name: '--space-6', value: '1.5rem', desc: '24px' },
+    { name: '--space-8', value: '2rem', desc: '32px' },
+    { name: '--space-10', value: '2.5rem', desc: '40px' },
+    { name: '--space-12', value: '3rem', desc: '48px' },
+    { name: '--space-16', value: '4rem', desc: '64px' },
+    { name: '--space-20', value: '5rem', desc: '80px' },
+    { name: '--space-24', value: '6rem', desc: '96px' },
+  ],
+  radii: [
+    { name: '--radius-sm', value: '0.25rem' },
+    { name: '--radius-md', value: '0.5rem' },
+    { name: '--radius-lg', value: '0.75rem' },
+    { name: '--radius-xl', value: '1rem' },
+    { name: '--radius-2xl', value: '1.5rem' },
+    { name: '--radius-3xl', value: '2rem' },
+    { name: '--radius-full', value: '9999px' },
+  ],
+};
+---
+
+<MainLayout title="Design Tokens | AOGIM Design System" description="All design tokens — colors, typography, spacing, and border radii.">
+  <Section title="Design Tokens" description="Todos os tokens do sistema de design AOGIM.">
+    <div class="space-y-12">
+
+      <div>
+        <h3 class="text-2xl font-bold mb-6">Cores</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {tokens.colors.map((t) => (
+            <TokenCard name={t.name} value={t.value} type="color" />
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <h3 class="text-2xl font-bold mb-6">Tipografia</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          {tokens.typography.map((t) => (
+            <TokenCard name={t.name} value={t.value} type="font" />
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <h3 class="text-2xl font-bold mb-6">Espaçamentos</h3>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+          {tokens.spacing.map((t) => (
+            <TokenCard name={t.name} value={t.value} type="space" />
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <h3 class="text-2xl font-bold mb-6">Bordas (Radius)</h3>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+          {tokens.radii.map((t) => (
+            <TokenCard name={t.name} value={t.value} type="radius" />
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </Section>
+</MainLayout>
