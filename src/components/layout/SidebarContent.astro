@@ -8,34 +8,109 @@ interface Props {
 const { locale = 'pt' } = Astro.props;
 const t = getTranslations(locale);
 const currentPath = Astro.url.pathname;
+const STORAGE_KEY = 'sidebar-sections';
 ---
 
-<nav class="p-4 space-y-6">
-  {t.nav.map((section) => (
-    <div>
-      <h3 class="px-3 mb-2 text-xs font-semibold uppercase tracking-wider text-[rgb(var(--color-text-secondary))]">
-        {section.title}
-      </h3>
-      <ul class="space-y-1">
-        {section.items.map((item) => {
-          const isActive = currentPath === item.href || currentPath.startsWith(item.href + '/');
-          return (
-            <li>
-              <a
-                href={item.href}
-                class:list={[
-                  'block px-3 py-2 rounded-lg text-sm transition-colors',
-                  isActive
-                    ? 'bg-brand-500/10 text-brand-500 font-medium'
-                    : 'text-[rgb(var(--color-text-secondary))] hover:bg-dark-100 dark:hover:bg-dark-800 hover:text-[rgb(var(--color-text))]',
-                ]}
-              >
-                {item.title}
-              </a>
-            </li>
-          );
-        })}
-      </ul>
-    </div>
-  ))}
+<nav class="p-4 space-y-1" data-sidebar>
+  {t.nav.map((section, i) => {
+    const hasActive = section.items.some(
+      (item) => currentPath === item.href || currentPath.startsWith(item.href + '/')
+    );
+    return (
+      <div class="rounded-lg" data-section={i}>
+        <button
+          data-section-toggle={i}
+          class="flex items-center justify-between w-full px-3 py-2 rounded-lg text-xs font-semibold uppercase tracking-wider text-[rgb(var(--color-text-secondary))] hover:bg-dark-100 dark:hover:bg-dark-800 transition-colors"
+        >
+          {section.title}
+          <svg data-chevron class="w-3.5 h-3.5 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <ul data-items={i} class="space-y-1 mt-1 overflow-hidden transition-all duration-200">
+          {section.items.map((item) => {
+            const isActive = currentPath === item.href || currentPath.startsWith(item.href + '/');
+            return (
+              <li>
+                <a
+                  href={item.href}
+                  class:list={[
+                    'block px-3 py-2 rounded-lg text-sm transition-colors',
+                    isActive
+                      ? 'bg-brand-500/10 text-brand-500 font-medium'
+                      : 'text-[rgb(var(--color-text-secondary))] hover:bg-dark-100 dark:hover:bg-dark-800 hover:text-[rgb(var(--color-text))]',
+                  ]}
+                >
+                  {item.title}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    );
+  })}
 </nav>
+
+<script>
+  const STORAGE_KEY = 'sidebar-sections';
+
+  function getCollapsed(): Record<number, boolean> {
+    try {
+      return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+    } catch {
+      return {};
+    }
+  }
+
+  function saveCollapsed(collapsed: Record<number, boolean>) {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(collapsed));
+    } catch {}
+  }
+
+  const collapsed = getCollapsed();
+
+  document.querySelectorAll('[data-sidebar]').forEach((nav) => {
+    nav.querySelectorAll('[data-section]').forEach((section) => {
+      const idx = Number(section.getAttribute('data-section'));
+      const toggle = section.querySelector('[data-section-toggle]') as HTMLButtonElement | null;
+      const items = section.querySelector('[data-items]') as HTMLElement | null;
+      const chevron = section.querySelector('[data-chevron]') as HTMLElement | null;
+      const hasActive = section.querySelector('[class*="bg-brand-500"]');
+
+      const isCollapsed = collapsed[idx] === true && !hasActive;
+
+      if (isCollapsed && items) {
+        items.style.maxHeight = '0px';
+        items.style.opacity = '0';
+        if (chevron) chevron.style.transform = 'rotate(-90deg)';
+      } else {
+        if (items) {
+          items.style.maxHeight = items.scrollHeight + 'px';
+          items.style.opacity = '1';
+        }
+      }
+
+      toggle?.addEventListener('click', () => {
+        const currentlyCollapsed = items?.style.maxHeight === '0px';
+        if (currentlyCollapsed) {
+          if (items) {
+            items.style.maxHeight = items.scrollHeight + 'px';
+            items.style.opacity = '1';
+          }
+          if (chevron) chevron.style.transform = 'rotate(0deg)';
+          collapsed[idx] = false;
+        } else {
+          if (items) {
+            items.style.maxHeight = '0px';
+            items.style.opacity = '0';
+          }
+          if (chevron) chevron.style.transform = 'rotate(-90deg)';
+          collapsed[idx] = true;
+        }
+        saveCollapsed(collapsed);
+      });
+    });
+  });
+</script>
