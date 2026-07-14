@@ -8,9 +8,9 @@ interface Props {
 const { locale = 'pt' } = Astro.props;
 ---
 
-<div data-mobile-menu class="fixed inset-0 z-40 hidden">
-  <div data-menu-backdrop class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
-  <div class="absolute left-0 top-16 bottom-0 w-[280px] bg-[rgb(var(--color-sidebar-bg))] border-r border-[rgb(var(--color-border))] overflow-y-auto shadow-2xl">
+<div data-mobile-menu class="fixed inset-0 z-40 hidden" role="dialog" aria-modal="true">
+  <div data-menu-backdrop class="absolute inset-0 bg-black/50 backdrop-blur-sm animate-fade-in"></div>
+  <div class="absolute left-0 top-16 bottom-0 w-[280px] bg-[rgb(var(--color-sidebar-bg))] border-r border-[rgb(var(--color-border))] overflow-y-auto shadow-2xl animate-slide-in">
     <SidebarContent locale={locale} />
   </div>
 </div>
@@ -20,13 +20,21 @@ const { locale = 'pt' } = Astro.props;
   const backdrop = document.querySelector('[data-menu-backdrop]');
   const toggle = document.querySelector('[data-toggle-menu]');
   if (menu && toggle) {
-    toggle.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
-      document.body.classList.toggle('overflow-hidden');
-    });
-    backdrop?.addEventListener('click', () => {
+    function open() {
+      menu.classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+    }
+    function close() {
       menu.classList.add('hidden');
       document.body.classList.remove('overflow-hidden');
+    }
+    toggle.addEventListener('click', () => {
+      if (menu.classList.contains('hidden')) open();
+      else close();
+    });
+    backdrop?.addEventListener('click', close);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') close();
     });
   }
 </script>
